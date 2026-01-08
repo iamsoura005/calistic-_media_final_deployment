@@ -93,7 +93,7 @@ export function Footer() {
                 <div className="w-full p-1 border-t border-b border-white/5 mb-12">
                     <div className="flex flex-col lg:flex-row items-center justify-between py-12 px-4 gap-12">
                         <div className="flex items-center gap-6">
-                            <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                            <div className="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-400 shrink-0">
                                 <Mail className="w-6 h-6" />
                             </div>
                             <div>

@@ -118,7 +118,7 @@ export function LeadCapture() {
                                                     type="email"
                                                     required
                                                     placeholder="john@example.com"
-                                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
+                                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
                                                 />
                                             </div>
                                         </div>
@@ -131,7 +131,7 @@ export function LeadCapture() {
                                                     required
                                                     placeholder="Tell us about your brand goals..."
                                                     rows={4}
-                                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all resize-none"
+                                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all resize-none"
                                                 />
                                             </div>
                                         </div>
