@@ -20,8 +20,8 @@ export default function ContactPage() {
             label: "Email Us",
             value: "calisticproduction@gmail.com",
             href: "mailto:calisticproduction@gmail.com",
-            color: "text-emerald-400",
-            bg: "bg-emerald-500/10"
+            color: "text-yellow-400",
+            bg: "bg-yellow-500/10"
         },
         {
             icon: <MapPin className="w-6 h-6" />,
@@ -46,7 +46,7 @@ export default function ContactPage() {
 
             <section className="relative pt-40 pb-32 px-6 overflow-hidden">
                 {/* Background Ambient Glows */}
-                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/10 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-yellow-500/10 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
                 <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/10 blur-[100px] rounded-full translate-y-1/2 pointer-events-none" />
 
                 <div className="container mx-auto max-w-6xl relative z-10">
@@ -55,7 +55,7 @@ export default function ContactPage() {
                         <div className="space-y-12">
                             <div className="space-y-6">
                                 <motion.span
-                                    className="text-emerald-400 text-xs font-semibold tracking-[0.4em] uppercase flex items-center gap-3"
+                                    className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase flex items-center gap-3"
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                 >
@@ -69,7 +69,7 @@ export default function ContactPage() {
                                     transition={{ delay: 0.1 }}
                                 >
                                     Let&apos;s build <br />
-                                    <span className="text-emerald-400 italic">your legacy.</span>
+                                    <span className="text-yellow-400 italic">your legacy.</span>
                                 </motion.h1>
                                 <motion.p
                                     className="text-white/50 text-xl font-light max-w-md leading-relaxed"
@@ -89,7 +89,7 @@ export default function ContactPage() {
                                         <motion.a
                                             key={i}
                                             href={social.href}
-                                            className="w-12 h-12 rounded-2xl border border-white/5 bg-white/5 flex items-center justify-center text-white/50 hover:text-emerald-400 hover:border-emerald-500/20 hover:bg-emerald-500/5 transition-all duration-300"
+                                            className="w-12 h-12 rounded-2xl border border-white/5 bg-white/5 flex items-center justify-center text-white/50 hover:text-yellow-400 hover:border-yellow-500/20 hover:bg-yellow-500/5 transition-all duration-300"
                                             whileHover={{ y: -5 }}
                                             initial={{ opacity: 0, scale: 0.8 }}
                                             animate={{ opacity: 1, scale: 1 }}
@@ -109,7 +109,7 @@ export default function ContactPage() {
                                     key={idx}
                                     href={info.href}
                                     target={info.href.startsWith("http") ? "_blank" : undefined}
-                                    className="group relative p-8 rounded-[2rem] border border-white/5 bg-white/[0.02] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-emerald-500/20 hover:bg-white/[0.04]"
+                                    className="group relative p-8 rounded-[2rem] border border-white/5 bg-white/[0.02] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-yellow-500/20 hover:bg-white/[0.04]"
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.3 + idx * 0.1 }}
@@ -122,36 +122,36 @@ export default function ContactPage() {
                                             </div>
                                             <div>
                                                 <p className="text-white/30 text-xs uppercase tracking-[0.2em] font-medium mb-1">{info.label}</p>
-                                                <p className="text-lg font-light tracking-wide group-hover:text-emerald-400 transition-colors uppercase">{info.value}</p>
+                                                <p className="text-lg font-light tracking-wide group-hover:text-yellow-400 transition-colors uppercase">{info.value}</p>
                                             </div>
                                         </div>
-                                        <ArrowRight className="w-5 h-5 text-white/10 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
+                                        <ArrowRight className="w-5 h-5 text-white/10 group-hover:text-yellow-400 group-hover:translate-x-1 transition-all" />
                                     </div>
 
                                     {/* Abstract Hover Decoration */}
-                                    <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-emerald-500/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-yellow-500/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </motion.a>
                             ))}
 
                             <motion.div
-                                className="mt-8 p-10 rounded-[2.5rem] bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent border border-emerald-500/20 relative overflow-hidden"
+                                className="mt-8 p-10 rounded-[2.5rem] bg-gradient-to-br from-yellow-500/10 via-transparent to-transparent border border-yellow-500/20 relative overflow-hidden"
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.8 }}
                             >
                                 <div className="relative z-10">
                                     <h3 className="text-2xl font-light mb-4 flex items-center gap-3">
-                                        <MessageSquare className="text-emerald-400 w-6 h-6" />
+                                        <MessageSquare className="text-yellow-400 w-6 h-6" />
                                         Direct Enquiry
                                     </h3>
                                     <p className="text-white/50 font-light mb-8 text-sm leading-relaxed">
                                         Our strategy team responds within 2 hours. Start your trajectory today.
                                     </p>
-                                    <button className="w-full bg-emerald-500 hover:bg-emerald-400 text-[#030303] py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-xl shadow-emerald-500/10">
+                                    <button className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-xl shadow-yellow-500/10">
                                         Launch Project Request <RocketIcon />
                                     </button>
                                 </div>
-                                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-emerald-500/10 blur-3xl rounded-full" />
+                                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-yellow-500/10 blur-3xl rounded-full" />
                             </motion.div>
                         </div>
                     </div>

@@ -38,7 +38,7 @@ export function Navbar() {
                         <img src="/calistic-logo.jpg" alt="Logo" className="w-full h-full object-contain" />
                     </div>
                     <span className="text-xl font-extralight tracking-widest text-white uppercase hidden sm:block">
-                        Calistic <span className="text-emerald-400 font-medium">Media</span>
+                        Calistic <span className="text-yellow-400 font-medium">Media</span>
                     </span>
                 </div>
 
@@ -48,14 +48,14 @@ export function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-light text-white/70 hover:text-emerald-400 transition-colors tracking-wide"
+                            className="text-sm font-light text-white/70 hover:text-yellow-400 transition-colors tracking-wide"
                         >
                             {link.name}
                         </a>
                     ))}
                     <a href="/contact">
                         <motion.button
-                            className="bg-emerald-500 hover:bg-emerald-400 text-[#030303] px-6 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg shadow-emerald-500/20"
+                            className="bg-yellow-500 hover:bg-yellow-400 text-[#030303] px-6 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg shadow-yellow-500/20"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -84,13 +84,13 @@ export function Navbar() {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-2xl font-extralight text-white hover:text-emerald-400 transition-colors"
+                                className="text-2xl font-extralight text-white hover:text-yellow-400 transition-colors"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {link.name}
                             </a>
                         ))}
-                        <button className="bg-emerald-500 text-[#030303] px-8 py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
+                        <button className="bg-yellow-500 text-[#030303] px-8 py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
                             START A PROJECT <ArrowRight className="w-4 h-4" />
                         </button>
                     </motion.div>

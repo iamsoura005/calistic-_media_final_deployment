@@ -142,7 +142,7 @@ export default function AboutUsSection() {
                         variants={containerVariants}
                     >
                         <motion.span
-                            className="text-emerald-400 font-medium flex items-center gap-2 tracking-[0.3em] text-[10px] uppercase mb-4"
+                            className="text-yellow-400 font-medium flex items-center gap-2 tracking-[0.3em] text-[10px] uppercase mb-4"
                             variants={itemVariants}
                         >
                             <Zap className="w-3 h-3" />
@@ -152,14 +152,14 @@ export default function AboutUsSection() {
                             className="text-6xl md:text-8xl font-extralight tracking-tight leading-none text-white"
                             variants={itemVariants}
                         >
-                            About <span className="text-emerald-400 italic">Us</span>
+                            About <span className="text-yellow-400 italic">Us</span>
                         </motion.h2>
 
                         <motion.p
                             className="text-white/90 text-xl md:text-2xl leading-snug font-light italic border-l-2 border-emerald-500/30 pl-6"
                             variants={itemVariants}
                         >
-                            &quot;We are India&apos;s premier influencer marketing agency, bridging the gap between brands and their audiences through authentic, engaging content and strategic influencer partnerships. <span className="text-emerald-400 font-normal">We serve Pan India.</span>&quot;
+                            &quot;We are India&apos;s premier influencer marketing agency, bridging the gap between brands and their audiences through authentic, engaging content and strategic influencer partnerships. <span className="text-yellow-400 font-normal">We serve Pan India.</span>&quot;
                         </motion.p>
 
                         <motion.p
@@ -185,7 +185,7 @@ export default function AboutUsSection() {
                                     {[40, 60, 45, 70, 55, 90, 80, 100].map((h, i) => (
                                         <motion.div
                                             key={i}
-                                            className="w-2 bg-emerald-500/40 rounded-t-sm"
+                                            className="w-2 bg-yellow-500/40 rounded-t-sm"
                                             initial={{ height: 0 }}
                                             whileInView={{ height: `${h}%` }}
                                             transition={{ duration: 0.8, delay: i * 0.05 }}

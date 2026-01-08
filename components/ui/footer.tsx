@@ -48,7 +48,7 @@ export function Footer() {
                                 <img src="/calistic-logo.jpg" alt="Logo" className="w-full h-full object-contain" />
                             </div>
                             <span className="text-2xl font-extralight tracking-[0.2em] text-white uppercase italic">
-                                Calistic <span className="text-emerald-400 font-medium">Media</span>
+                                Calistic <span className="text-yellow-400 font-medium">Media</span>
                             </span>
                         </div>
                         <p className="text-white/50 text-lg font-light leading-relaxed max-w-md mb-10">
@@ -59,7 +59,7 @@ export function Footer() {
                                 <motion.a
                                     key={idx}
                                     href={social.href}
-                                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/70 hover:text-emerald-400 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all duration-300"
+                                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:bg-yellow-500 hover:text-[#030303] transition-all duration-300"
                                     whileHover={{ y: -3 }}
                                 >
                                     {social.icon}
@@ -77,7 +77,7 @@ export function Footer() {
                                     <li key={link.name}>
                                         <a
                                             href={link.href}
-                                            className="text-white/50 hover:text-emerald-400 transition-colors duration-300 font-light flex items-center gap-2 group text-sm"
+                                            className="text-white/50 hover:text-yellow-400 transition-colors duration-300 font-light flex items-center gap-2 group text-sm"
                                         >
                                             {link.name}
                                             <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />

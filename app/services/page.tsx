@@ -11,27 +11,27 @@ const services = [
         description: "Scale your brand with India's top creators. We manage everything from discovery to execution and reporting.",
         icon: <Users className="w-6 h-6" />,
         features: ["Creator Sourcing", "Campaign Management", "Contracting", "Performance Tracking"],
-        vibe: "bg-emerald-500/5",
-        accent: "border-emerald-500/20",
-        text: "text-emerald-400"
+        vibe: "bg-yellow-500/5",
+        accent: "border-yellow-500/20",
+        text: "text-yellow-400"
     },
     {
         title: "Content Creation",
         description: "Visuals that defy the ordinary. High-end production that tells your brand's story with cinematic quality.",
         icon: <Camera className="w-6 h-6" />,
         features: ["Professional Shoots", "Short Form Mastery", "Visual Identity", "UGC Directives"],
-        vibe: "bg-blue-500/5",
-        accent: "border-blue-500/20",
-        text: "text-blue-400"
+        vibe: "bg-amber-500/5",
+        accent: "border-amber-500/20",
+        text: "text-amber-400"
     },
     {
         title: "Strategic Campaigns",
         description: "Data-driven strategies designed to maximize ROI. We don't just post; we create movements.",
         icon: <Target className="w-6 h-6" />,
         features: ["Audience Analysis", "SEO Optimized", "Conversion Focus", "Long-term Scale"],
-        vibe: "bg-purple-500/5",
-        accent: "border-purple-500/20",
-        text: "text-purple-400"
+        vibe: "bg-orange-500/5",
+        accent: "border-orange-500/20",
+        text: "text-orange-400"
     }
 ]
 
@@ -42,11 +42,11 @@ export default function ServicesPage() {
 
             {/* Hero Section */}
             <section className="relative pt-40 pb-20 px-6 overflow-hidden">
-                <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-emerald-500/10 to-transparent blur-3xl opacity-30 pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-yellow-500/10 to-transparent blur-3xl opacity-30 pointer-events-none" />
 
                 <div className="container mx-auto max-w-6xl relative z-10">
                     <motion.span
-                        className="text-emerald-400 text-xs font-semibold tracking-[0.4em] uppercase mb-6 block"
+                        className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase mb-6 block"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                     >
@@ -59,7 +59,7 @@ export default function ServicesPage() {
                         transition={{ delay: 0.1 }}
                     >
                         Engineered for <br />
-                        <span className="text-emerald-400 italic">Impact.</span>
+                        <span className="text-yellow-400 italic">Impact.</span>
                     </motion.h1>
                     <motion.p
                         className="text-white/50 text-xl font-light max-w-2xl leading-relaxed"
@@ -130,8 +130,8 @@ export default function ServicesPage() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-5xl md:text-7xl font-extralight tracking-tight mb-12">Ready to define your <br /> <span className="text-emerald-400">digital legacy?</span></h2>
-                        <button className="bg-emerald-500 hover:bg-emerald-400 text-[#030303] px-12 py-5 rounded-full font-bold text-lg shadow-2xl shadow-emerald-500/20 transition-all active:scale-95">
+                        <h2 className="text-5xl md:text-7xl font-extralight tracking-tight mb-12">Ready to define your <br /> <span className="text-yellow-400">digital legacy?</span></h2>
+                        <button className="bg-yellow-500 hover:bg-yellow-400 text-[#030303] px-12 py-5 rounded-full font-bold text-lg shadow-2xl shadow-yellow-500/20 transition-all active:scale-95">
                             Start a Project
                         </button>
                     </motion.div>

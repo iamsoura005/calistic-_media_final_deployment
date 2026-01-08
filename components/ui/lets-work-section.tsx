@@ -48,8 +48,8 @@ export function LetsWorkTogether() {
             {isLoading && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#030303]">
                     <GooeyLoader
-                        primaryColor="#10b981"
-                        secondaryColor="#34d399"
+                        primaryColor="#facc15"
+                        secondaryColor="#eab308"
                         borderColor="#374151"
                     />
                 </div>
@@ -90,7 +90,7 @@ export function LetsWorkTogether() {
                         width={400}
                         height={100}
                         rotate={20}
-                        gradient="from-emerald-500/[0.1]"
+                        gradient="from-yellow-500/[0.1]"
                         className="right-[10%] top-[10%]"
                     />
                     <ElegantShape
@@ -98,7 +98,7 @@ export function LetsWorkTogether() {
                         width={250}
                         height={60}
                         rotate={-25}
-                        gradient="from-blue-500/[0.1]"
+                        gradient="from-amber-500/[0.1]"
                         className="left-[20%] top-[40%]"
                     />
                 </div>
@@ -166,7 +166,7 @@ export function LetsWorkTogether() {
                                             opacity: isClicked ? 0 : 1,
                                         }}
                                     >
-                                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-white/90 to-blue-300">Media</span>
+                                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white/90 to-amber-300">Media</span>
                                     </span>
                                 </span>
                             </h2>
