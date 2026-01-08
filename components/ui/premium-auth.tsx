@@ -489,7 +489,7 @@ export function AuthForm({
         if (authMode === 'signup' && registrationStep === 'complete') {
             return (
                 <div className="text-center space-y-6 animate-in fade-in-50 slide-in-from-right-5">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-400">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
@@ -808,11 +808,11 @@ export function AuthForm({
             aria-labelledby="auth-title"
         >
             {successMessage && (
-                <div className="mb-4 p-3 bg-green-500/20 border border-green-400/30 rounded-xl flex items-center gap-2 animate-in fade-in-0 slide-in-from-top-5">
-                    <svg className="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <div className="mb-4 p-3 bg-yellow-500/20 border border-yellow-400/30 rounded-xl flex items-center gap-2 animate-in fade-in-0 slide-in-from-top-5">
+                    <svg className="h-4 w-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span className="text-green-700 dark:text-green-300 text-sm">{successMessage}</span>
+                    <span className="text-yellow-700 dark:text-yellow-300 text-sm">{successMessage}</span>
                 </div>
             )}
 

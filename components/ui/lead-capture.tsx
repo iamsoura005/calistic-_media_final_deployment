@@ -21,7 +21,7 @@ export function LeadCapture() {
     return (
         <section className="w-full py-32 px-6 relative overflow-hidden bg-[#030303]">
             {/* Background Glows */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-yellow-500/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto max-w-5xl relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -32,12 +32,12 @@ export function LeadCapture() {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4 block">
+                            <span className="text-yellow-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4 block">
                                 Join the Movement
                             </span>
-                            <h2 className="text-5xl md:text-6xl font-extralight tracking-tight text-white leading-tight mb-6">
-                                Launch Your <br />
-                                <span className="text-emerald-400 italic">Trajectory.</span>
+                            <h2 className="text-4xl md:text-6xl font-extralight tracking-tight leading-none mb-8">
+                                Design your <br />
+                                <span className="text-yellow-400 italic">Trajectory.</span>
                             </h2>
                             <p className="text-white/50 text-xl font-light leading-relaxed max-w-md">
                                 Partner with India&apos;s premier agency to bridge the gap between your brand and millions of engaged followers.
@@ -57,7 +57,7 @@ export function LeadCapture() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.5, delay: i * 0.1 }}
                                 >
-                                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                                    <div className="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-400 shrink-0">
                                         {item.icon}
                                     </div>
                                     {item.text}
@@ -92,7 +92,7 @@ export function LeadCapture() {
                                                         type="text"
                                                         required
                                                         placeholder="John Doe"
-                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
+                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
                                                     />
                                                 </div>
                                             </div>
@@ -104,7 +104,7 @@ export function LeadCapture() {
                                                         type="text"
                                                         required
                                                         placeholder="@calisticmedia"
-                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
+                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
                                                     />
                                                 </div>
                                             </div>
@@ -139,7 +139,7 @@ export function LeadCapture() {
                                         <motion.button
                                             type="submit"
                                             disabled={loading}
-                                            className="w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-[#030303] py-5 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl shadow-emerald-500/20 transition-all duration-300 group"
+                                            className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 text-[#030303] py-5 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl shadow-yellow-500/20 transition-all duration-300 group"
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                         >
@@ -158,7 +158,7 @@ export function LeadCapture() {
                                         initial={{ opacity: 0, scale: 0.9 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                     >
-                                        <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto text-emerald-500 mb-6">
+                                        <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto text-yellow-500 mb-6">
                                             <CheckCircle className="w-10 h-10" />
                                         </div>
                                         <h3 className="text-3xl font-light text-white">Objective Received.</h3>
@@ -167,7 +167,7 @@ export function LeadCapture() {
                                         </p>
                                         <button
                                             onClick={() => setIsSubmitted(false)}
-                                            className="text-emerald-500 text-sm font-medium hover:underline pt-4"
+                                            className="text-yellow-500 text-sm font-medium hover:underline pt-4"
                                         >
                                             Send another objective
                                         </button>
@@ -178,7 +178,7 @@ export function LeadCapture() {
 
                         {/* Decorative floating elements */}
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/10 blur-3xl rounded-full" />
-                        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-emerald-500/10 blur-3xl rounded-full" />
+                        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-yellow-500/10 blur-3xl rounded-full" />
                     </motion.div>
                 </div>
             </div>

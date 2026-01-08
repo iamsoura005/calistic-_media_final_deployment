@@ -56,7 +56,7 @@ export default function AboutUsSection() {
     const services = [
         {
             icon: <Pen className="w-6 h-6" />,
-            secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-emerald-400" />,
+            secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
             title: "1. Influencer Marketing",
             description:
                 "The Art of Human Connection. We don't just find followers; we identify voices that command attention. Our approach to influencer marketing is rooted in authenticity—bridging the gap between your brand and the right audience. We curate partnerships that feel natural, effortless, and powerful, ensuring your message doesn't just reach people, it moves them.",
@@ -64,7 +64,7 @@ export default function AboutUsSection() {
         },
         {
             icon: <PenTool className="w-6 h-6" />,
-            secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-emerald-400" />,
+            secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
             title: "2. Content Creation",
             description:
                 "Visuals That Defy the Ordinary. In a world of constant noise, we create the silence. From cinematic production to high-end social media aesthetics, our content is designed to stop the scroll. We blend precision technology with creative intuition to produce visuals that are as smooth as they are striking. If it's Calistic, it's world-class.",
@@ -72,7 +72,7 @@ export default function AboutUsSection() {
         },
         {
             icon: <Building2 className="w-6 h-6" />,
-            secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-emerald-400" />,
+            secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
             title: "3. Customized Campaigns",
             description:
                 "Precision Strategy. Bespoke Execution. Your brand is unique; your strategy should be too. We reject the \"one-size-fits-all\" gravity of traditional marketing. Every campaign we build is a custom-engineered masterpiece, tailored specifically to your goals and your market. We design the trajectory; you enjoy the elevation.",
@@ -95,7 +95,7 @@ export default function AboutUsSection() {
         >
             {/* Decorative background elements */}
             <motion.div
-                className="absolute top-20 left-10 w-64 h-64 rounded-full bg-emerald-500/5 blur-3xl"
+                className="absolute top-20 left-10 w-64 h-64 rounded-full bg-yellow-500/5 blur-3xl"
                 style={{ y: y1, rotate: rotate1 }}
             />
             <motion.div
@@ -103,7 +103,7 @@ export default function AboutUsSection() {
                 style={{ y: y2, rotate: rotate2 }}
             />
             <motion.div
-                className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-emerald-400/30"
+                className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-yellow-400/30"
                 animate={{
                     y: [0, -15, 0],
                     opacity: [0.5, 1, 0.5],
@@ -156,7 +156,7 @@ export default function AboutUsSection() {
                         </motion.h2>
 
                         <motion.p
-                            className="text-white/90 text-xl md:text-2xl leading-snug font-light italic border-l-2 border-emerald-500/30 pl-6"
+                            className="text-white/90 text-xl md:text-2xl leading-snug font-light italic border-l-2 border-yellow-500/30 pl-6"
                             variants={itemVariants}
                         >
                             &quot;We are India&apos;s premier influencer marketing agency, bridging the gap between brands and their audiences through authentic, engaging content and strategic influencer partnerships. <span className="text-yellow-400 font-normal">We serve Pan India.</span>&quot;
@@ -173,7 +173,7 @@ export default function AboutUsSection() {
                             className="w-full h-32 mt-8 bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden relative flex items-center justify-center group"
                             variants={itemVariants}
                         >
-                            <div className="absolute inset-0 flex items-center justify-between px-8 text-white/5 group-hover:text-emerald-500/10 transition-colors">
+                            <div className="absolute inset-0 flex items-center justify-between px-8 text-white/5 group-hover:text-yellow-500/10 transition-colors">
                                 {Array.from({ length: 12 }).map((_, i) => (
                                     <div key={i} className="w-[1px] h-full bg-current" />
                                 ))}
@@ -207,7 +207,7 @@ export default function AboutUsSection() {
                             >
                                 Explore Portfolio
                                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                <div className="absolute inset-0 rounded-full border border-emerald-500/50 scale-105 opacity-0 group-hover:opacity-100 transition-opacity blur-[2px]" />
+                                <div className="absolute inset-0 rounded-full border border-yellow-500/50 scale-105 opacity-0 group-hover:opacity-100 transition-opacity blur-[2px]" />
                             </motion.button>
                         </motion.div>
                     </motion.div>
@@ -220,8 +220,8 @@ export default function AboutUsSection() {
                     >
                         <div className="relative w-64 h-64 md:w-[450px] md:h-[450px]">
                             {/* Decorative Background Glows */}
-                            <div className="absolute inset-0 rounded-[3rem] bg-emerald-500/10 blur-[60px] animate-pulse" />
-                            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-emerald-500/20 via-transparent to-purple-500/20 blur-[10px]" />
+                            <div className="absolute inset-0 rounded-[3rem] bg-yellow-500/10 blur-[60px] animate-pulse" />
+                            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-yellow-500/20 via-transparent to-purple-500/20 blur-[10px]" />
 
                             <motion.div
                                 className="relative w-full h-full rounded-[2.5rem] border border-white/10 bg-[#030303]/90 backdrop-blur-2xl p-16 shadow-2xl flex items-center justify-center overflow-hidden"
@@ -239,7 +239,7 @@ export default function AboutUsSection() {
 
                             {/* Floating Element */}
                             <motion.div
-                                className="absolute -top-6 -right-6 w-20 h-20 bg-emerald-500/10 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center text-emerald-400 shadow-xl"
+                                className="absolute -top-6 -right-6 w-20 h-20 bg-yellow-500/10 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center text-yellow-400 shadow-xl"
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                             >
@@ -318,9 +318,9 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay 
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: delay + 0.3 }}
             >
-                <div className="absolute inset-0 bg-emerald-500/20 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-yellow-500/20 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <motion.div
-                    className="text-white bg-white/5 border border-white/10 p-5 rounded-2xl transition-all duration-300 group-hover:bg-emerald-500 group-hover:text-[#030303] group-hover:border-emerald-500 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] relative z-10"
+                    className="text-white bg-white/5 border border-white/10 p-5 rounded-2xl transition-all duration-300 group-hover:bg-yellow-500 group-hover:text-[#030303] group-hover:border-yellow-500 group-hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] relative z-10"
                     whileHover={{ rotate: [0, -5, 5, 0], transition: { duration: 0.4 } }}
                 >
                     {icon}
@@ -328,7 +328,7 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay 
                 </motion.div>
             </motion.div>
 
-            <h3 className="text-2xl font-extralight text-white mb-4 group-hover:text-emerald-400 transition-colors duration-300 tracking-tight">
+            <h3 className="text-2xl font-extralight text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300 tracking-tight">
                 {title}
             </h3>
 
@@ -337,7 +337,7 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay 
             </p>
 
             <motion.div
-                className="mt-6 flex items-center justify-center text-emerald-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+                className="mt-6 flex items-center justify-center text-yellow-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
             >
                 <span className="flex items-center gap-1 cursor-pointer">
                     DISCOVER MORE <ArrowRight className="w-3 h-3" />
@@ -396,7 +396,7 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
         >
             <motion.div
-                className="w-14 h-14 rounded-full bg-emerald-400/10 flex items-center justify-center mb-4 text-emerald-400 group-hover:bg-emerald-400/20 transition-colors duration-300"
+                className="w-14 h-14 rounded-full bg-yellow-400/10 flex items-center justify-center mb-4 text-yellow-400 group-hover:bg-yellow-400/20 transition-colors duration-300"
                 whileHover={{ rotate: 360, transition: { duration: 0.8 } }}
             >
                 {icon}
@@ -406,7 +406,7 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
                 <span>{suffix}</span>
             </motion.div>
             <p className="text-white/60 text-sm mt-1">{label}</p>
-            <motion.div className="w-10 h-0.5 bg-emerald-400 mt-3 group-hover:w-16 transition-all duration-300" />
+            <motion.div className="w-10 h-0.5 bg-yellow-400 mt-3 group-hover:w-16 transition-all duration-300" />
         </motion.div>
     )
 }

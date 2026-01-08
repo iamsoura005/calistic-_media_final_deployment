@@ -36,7 +36,7 @@ export function Footer() {
     return (
         <footer className="w-full bg-[#030303] pt-32 pb-12 px-6 border-t border-white/5 relative overflow-hidden">
             {/* Background Accents */}
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full -mb-48 -mr-48" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-500/5 blur-[120px] rounded-full -mb-48 -mr-48" />
             <div className="absolute top-0 left-0 w-64 h-64 bg-purple-500/5 blur-[100px] rounded-full -mt-32 -ml-32" />
 
             <div className="container mx-auto">
@@ -98,7 +98,7 @@ export function Footer() {
                             </div>
                             <div>
                                 <p className="text-white/30 text-[10px] uppercase tracking-widest font-medium mb-1">Email us</p>
-                                <a href="mailto:calisticproduction@gmail.com" className="text-white hover:text-emerald-400 transition-colors text-lg font-light">
+                                <a href="mailto:calisticproduction@gmail.com" className="text-white hover:text-yellow-400 transition-colors text-lg font-light">
                                     calisticproduction@gmail.com
                                 </a>
                             </div>
@@ -110,7 +110,7 @@ export function Footer() {
                             </div>
                             <div>
                                 <p className="text-white/30 text-[10px] uppercase tracking-widest font-medium mb-1">Call us</p>
-                                <a href="tel:8240721057" className="text-white hover:text-emerald-400 transition-colors text-lg font-light tracking-tight">
+                                <a href="tel:8240721057" className="text-white hover:text-yellow-400 transition-colors text-lg font-light tracking-tight">
                                     +91 8240721057
                                 </a>
                             </div>
@@ -137,7 +137,7 @@ export function Footer() {
                     </p>
                     <div className="flex items-center gap-8">
                         <span className="text-white/20 text-[10px] tracking-widest uppercase">High Performance Agency</span>
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
                     </div>
                 </div>
             </div>

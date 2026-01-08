@@ -34,7 +34,7 @@ const AppInput = (props: InputProps) => {
             <div className="relative w-full">
                 <input
                     type="text"
-                    className="peer relative z-10 border-2 border-white/10 h-13 w-full rounded-md bg-white/5 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white/10 focus:border-emerald-400/50 placeholder:font-medium placeholder:text-white/40 text-white"
+                    className="peer relative z-10 border-2 border-white/10 h-13 w-full rounded-md bg-white/5 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white/10 focus:border-yellow-400/50 placeholder:font-medium placeholder:text-white/40 text-white"
                     placeholder={placeholder}
                     onMouseMove={handleMouseMove}
                     onMouseEnter={() => setIsHovering(true)}
@@ -118,7 +118,7 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
                     <div
-                        className={`absolute pointer-events-none w-[500px] h-[500px] bg-gradient-to-r from-emerald-300/20 via-blue-300/20 to-purple-300/20 rounded-full blur-3xl transition-opacity duration-200 ${isHovering ? 'opacity-100' : 'opacity-0'
+                        className={`absolute pointer-events-none w-[500px] h-[500px] bg-gradient-to-r from-yellow-300/20 via-blue-300/20 to-purple-300/20 rounded-full blur-3xl transition-opacity duration-200 ${isHovering ? 'opacity-100' : 'opacity-0'
                             }`}
                         style={{
                             transform: `translate(${mousePosition.x - 250}px, ${mousePosition.y - 250}px)`,
@@ -142,7 +142,7 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                                                     <li key={index} className="list-none">
                                                         <a
                                                             href={social.href}
-                                                            className={`w-[2.5rem] md:w-[3rem] h-[2.5rem] md:h-[3rem] bg-white/5 rounded-full flex justify-center items-center relative z-[1] border-2 border-white/10 overflow-hidden group hover:border-emerald-400/50 transition-all`}
+                                                            className={`w-[2.5rem] md:w-[3rem] h-[2.5rem] md:h-[3rem] bg-white/5 rounded-full flex justify-center items-center relative z-[1] border-2 border-white/10 overflow-hidden group hover:border-yellow-400/50 transition-all`}
                                                         >
                                                             <div
                                                                 className={`absolute inset-0 w-full h-full ${social.gradient || social.bg
@@ -164,10 +164,10 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                                 <AppInput placeholder="Email" type="email" />
                                 <AppInput placeholder="Password" type="password" />
                             </div>
-                            <a href="#" className='font-light text-sm md:text-md text-emerald-400 hover:text-emerald-300 transition-colors'>Forgot your password?</a>
+                            <a href="#" className='font-light text-sm md:text-md text-yellow-400 hover:text-yellow-300 transition-colors'>Forgot your password?</a>
                             <div className='flex gap-4 justify-center items-center'>
                                 <button
-                                    className="group/button relative inline-flex justify-center items-center overflow-hidden rounded-md bg-emerald-500 px-8 py-3 text-sm font-medium text-white transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/50 cursor-pointer"
+                                    className="group/button relative inline-flex justify-center items-center overflow-hidden rounded-md bg-yellow-500 px-8 py-3 text-sm font-medium text-white transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/50 cursor-pointer"
                                 >
                                     <span className="text-sm px-2 py-1">Sign In</span>
                                     <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
@@ -178,7 +178,7 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                         </form>
                     </div>
                 </div>
-                <div className='hidden lg:flex w-1/2 h-full overflow-hidden items-center justify-center bg-gradient-to-br from-emerald-500/10 to-purple-500/10'>
+                <div className='hidden lg:flex w-1/2 h-full overflow-hidden items-center justify-center bg-gradient-to-br from-yellow-500/10 to-purple-500/10'>
                     <div className="w-64 h-64 relative">
                         <Image
                             src='/calistic-logo.jpg'
