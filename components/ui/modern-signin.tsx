@@ -195,7 +195,7 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                 <div className='hidden lg:flex w-1/2 h-full overflow-hidden items-center justify-center bg-gradient-to-br from-yellow-500/10 to-purple-500/10'>
                     <div className="w-64 h-64 relative">
                         <img
-                            src='/calistic-logo.png'
+                            src='/logo-gold.png'
                             alt="Calistic Media Logo"
                             className="w-full h-full object-contain"
                         />

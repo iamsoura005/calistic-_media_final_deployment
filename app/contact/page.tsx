@@ -1,11 +1,19 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Navbar } from "@/components/ui/navbar"
-import { Footer } from "@/components/ui/footer"
-import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Twitter, ArrowRight, MessageSquare, Sparkles } from "lucide-react"
+import { Home, Sparkles, Layout, MessageSquare, MapPin } from "lucide-react"
+import { NavBar } from "@/components/ui/tubelight-navbar"
+import FooterSection from "@/components/ui/footer"
+import { Mail, Phone, Instagram, Linkedin, Facebook, Twitter, ArrowRight } from "lucide-react"
 
 export default function ContactPage() {
+    const navItems = [
+        { name: "Home", url: "/", icon: Home },
+        { name: "Services", url: "/services", icon: Layout },
+        { name: "Features", url: "/#features", icon: Sparkles },
+        { name: "Contact", url: "/contact", icon: MessageSquare }
+    ];
+
     const contactInfo = [
         {
             icon: <Phone className="w-6 h-6" />,
@@ -41,8 +49,8 @@ export default function ContactPage() {
     ]
 
     return (
-        <main className="min-h-screen bg-[#030303] text-white">
-            <Navbar />
+        <main className="min-h-screen bg-[#030303] text-white scroll-smooth">
+            <NavBar items={navItems} />
 
             <section className="relative pt-40 pb-32 px-6 overflow-hidden">
                 {/* Background Ambient Glows */}
@@ -161,7 +169,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <Footer />
+            <FooterSection />
         </main>
     )
 }

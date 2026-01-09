@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Navbar } from "@/components/ui/navbar"
-import { Footer } from "@/components/ui/footer"
+import { Home, Sparkles, Layout, MessageSquare, MapPin } from "lucide-react"
+import { NavBar } from "@/components/ui/tubelight-navbar"
+import FooterSection from "@/components/ui/footer"
 import { Zap, Camera, Users, Target, BarChart, Rocket, ChevronRight, ArrowRight } from "lucide-react"
 
 const services = [
@@ -36,9 +37,16 @@ const services = [
 ]
 
 export default function ServicesPage() {
+    const navItems = [
+        { name: "Home", url: "/", icon: Home },
+        { name: "Services", url: "/services", icon: Layout },
+        { name: "Features", url: "/#features", icon: Sparkles },
+        { name: "Contact", url: "/contact", icon: MessageSquare }
+    ];
+
     return (
-        <main className="min-h-screen bg-[#030303] text-white">
-            <Navbar />
+        <main className="min-h-screen bg-[#030303] text-white scroll-smooth">
+            <NavBar items={navItems} />
 
             {/* Hero Section */}
             <section className="relative pt-40 pb-20 px-6 overflow-hidden">
@@ -169,7 +177,7 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            <Footer />
+            <FooterSection />
         </main>
     )
 }

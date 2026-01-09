@@ -8,7 +8,7 @@ import {
     CheckCircle, Smartphone, Globe, Layout, ChevronRight,
     Award, Users, Calendar, TrendingUp
 } from "lucide-react"
-import { Footer } from "./footer"
+import FooterSection from "./footer"
 import { LeadCapture } from "./lead-capture"
 
 export default function AboutUsSection() {
@@ -236,7 +236,7 @@ export default function AboutUsSection() {
                                 {/* Subtle background glow instead of box */}
                                 <div className="absolute inset-0 bg-yellow-500/5 blur-[100px] rounded-full pointer-events-none" />
                                 <img
-                                    src="/calistic-logo.png"
+                                    src="/logo-gold.png"
                                     alt="Calistic Media"
                                     className="w-full h-full object-contain relative z-10"
                                 />
@@ -294,7 +294,7 @@ export default function AboutUsSection() {
                 <LeadCapture />
 
                 {/* Global Footer */}
-                <Footer />
+                <FooterSection />
             </motion.div>
         </section>
     )

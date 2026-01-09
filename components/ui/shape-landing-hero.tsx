@@ -72,7 +72,7 @@ export function ElegantShape({
     );
 }
 
-function HeroGeometric({
+export default function HeroGeometric({
     badge = "Design Collective",
     title1 = "Elevate Your Digital Vision",
     title2 = "Crafting Exceptional Websites",
@@ -145,17 +145,17 @@ function HeroGeometric({
                 />
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6 py-10 md:py-0 flex items-center justify-center min-h-[calc(100vh-80px)] md:min-h-screen">
-                <div className="max-w-3xl mx-auto text-center">
+            <div className="relative z-10 container mx-auto px-4 md:px-6 py-10 md:py-0 flex items-center justify-center min-h-[calc(100vh-80px)] md:min-h-screen will-change-transform">
+                <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         custom={0}
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] mb-10 md:mb-16 will-change-transform"
                     >
-                        <Circle className="h-2 w-2 fill-yellow-500/80" />
-                        <span className="text-sm text-white/60 tracking-wide">
+                        <Circle className="h-2 w-2 fill-yellow-500/80 animate-pulse" />
+                        <span className="text-xs md:text-sm text-white/60 tracking-[0.2em] uppercase font-light">
                             {badge}
                         </span>
                     </motion.div>
@@ -165,24 +165,25 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        className="will-change-transform"
                     >
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extralight mb-6 md:mb-8 tracking-tighter leading-[1.1] md:leading-none">
+                        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight mb-8 md:mb-12 tracking-tighter leading-[1.05] md:leading-none">
                             <motion.span
                                 className="block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50"
-                                animate={{ opacity: [0.8, 1, 0.8] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                animate={{ opacity: [0.9, 1, 0.9] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                             >
                                 {title1}
                             </motion.span>
                             <motion.span
                                 className={cn(
-                                    "block bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-amber-300 italic font-medium"
+                                    "block bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-amber-300 italic font-medium py-2"
                                 )}
                                 animate={{
                                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                                 }}
                                 transition={{
-                                    duration: 8,
+                                    duration: 6,
                                     repeat: Infinity,
                                     ease: "linear",
                                 }}
@@ -198,9 +199,10 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        className="flex flex-col items-center will-change-transform"
                     >
-                        <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-                            Driving sustainable ROI through pure organic ways. We thoroughly understand where to work and how to scale your brand Pan India.
+                        <p className="text-sm sm:text-lg md:text-xl text-white/40 mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
+                            Driving sustainable <span className="text-yellow-500/60 font-medium">ROI</span> through pure organic ways. We thoroughly understand where to work and how to scale your brand Pan India.
                         </p>
                     </motion.div>
                 </div>
@@ -211,4 +213,4 @@ function HeroGeometric({
     );
 }
 
-export { HeroGeometric }
+
