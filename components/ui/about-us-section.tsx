@@ -82,7 +82,7 @@ export default function AboutUsSection() {
 
     const stats = [
         { icon: <Award />, value: 50000, label: "Creators Network", suffix: "+" },
-        { icon: <Users />, value: 2000000, label: "Monthly Reach", suffix: "+" },
+        { icon: <Users />, value: 150000000, label: "Monthly Views", suffix: "+" },
         { icon: <Calendar />, value: 500, label: "Campaigns Delivered", suffix: "+" },
         { icon: <TrendingUp />, value: 3, label: "Average ROI", suffix: "x" },
     ]

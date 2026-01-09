@@ -6,6 +6,7 @@ import { ArrowUpRight, Calendar } from "lucide-react"
 import { ElegantShape } from "./shape-landing-hero"
 import { Navbar } from "./navbar"
 import { GooeyLoader } from "./loader-10"
+import { SignUpPopup } from "./sign-up-popup"
 import AboutUsSection from "./about-us-section"
 
 const GrainTexture = () => (
@@ -19,11 +20,16 @@ export function LetsWorkTogether() {
     const [isClicked, setIsClicked] = useState(false)
     const [showSuccess, setShowSuccess] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false)
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false)
-        }, 2000)
+            // Show sign up popup after loading finishes
+            setTimeout(() => {
+                setIsSignUpOpen(true)
+            }, 800)
+        }, 3000) // Slightly longer loading for "classy" feel
         return () => clearTimeout(timer)
     }, [])
 
@@ -48,9 +54,7 @@ export function LetsWorkTogether() {
             {isLoading && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#030303]">
                     <GooeyLoader
-                        primaryColor="#facc15"
-                        secondaryColor="#eab308"
-                        borderColor="#374151"
+                        color="#facc15"
                     />
                 </div>
             )}
@@ -139,7 +143,7 @@ export function LetsWorkTogether() {
                     >
                         <div className="flex flex-col items-center gap-6">
                             <h2
-                                className="relative text-center text-5xl font-light tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                                className="relative text-center text-4xl font-light tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                                 style={{
                                     opacity: isClicked ? 0 : 1,
                                     transform: isClicked ? "translateY(-40px) scale(0.95)" : "translateY(0) scale(1)",
@@ -233,6 +237,16 @@ export function LetsWorkTogether() {
                     </div>
                 </div>
             </section>
+
+            {/* Post-loading Enhancements */}
+            {!isLoading && (
+                <>
+                    <SignUpPopup
+                        isOpen={isSignUpOpen}
+                        onClose={() => setIsSignUpOpen(false)}
+                    />
+                </>
+            )}
         </>
     )
 }
