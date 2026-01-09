@@ -51,24 +51,24 @@ export default function FeaturesPage() {
             <NavBar items={navItems} />
 
             {/* Hero Section */}
-            <section className="relative pt-40 pb-20 px-6 overflow-hidden">
+            <section className="relative pt-24 md:pt-40 pb-12 md:pb-20 px-4 md:px-6 overflow-hidden">
                 <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-yellow-500/10 to-transparent blur-3xl opacity-30 pointer-events-none" />
 
                 <div className="container mx-auto max-w-6xl relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex flex-col items-center gap-6"
+                        className="flex flex-col items-center gap-4 md:gap-6"
                     >
-                        <div className="flex flex-col items-center gap-4 mb-4">
-                            <img src="/logo-gold.png" alt="Calistic Media" className="h-24 md:h-32 w-auto" />
-                            <span className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase">Core Capabilities</span>
+                        <div className="flex flex-col items-center gap-3 md:gap-4 mb-2 md:mb-4">
+                            <img src="/logo-gold.png" alt="Calistic Media" className="h-16 md:h-32 w-auto" />
+                            <span className="text-yellow-400 text-[10px] md:text-xs font-semibold tracking-[0.4em] uppercase">Core Capabilities</span>
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-extralight tracking-tight leading-tight mb-8">
+                        <h1 className="text-4xl md:text-8xl font-extralight tracking-tight leading-[1.1] md:leading-tight mb-4 md:mb-8">
                             High Fidelity <br />
                             <span className="text-yellow-400 italic">Features.</span>
                         </h1>
-                        <p className="text-white/50 text-xl font-light max-w-2xl leading-relaxed mx-auto">
+                        <p className="text-white/50 text-sm md:text-xl font-light max-w-2xl leading-relaxed mx-auto px-4">
                             The technological and strategic foundation that powers Calistic Media&apos;s unparalleled organic growth engine.
                         </p>
                     </motion.div>

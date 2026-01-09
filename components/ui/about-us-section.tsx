@@ -30,10 +30,10 @@ export default function AboutUsSection({
         offset: ["start end", "end start"],
     })
 
-    const y1 = useTransform(scrollYProgress, [0, 1], [0, -50])
-    const y2 = useTransform(scrollYProgress, [0, 1], [0, 50])
-    const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 20])
-    const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -20])
+    const y1 = useTransform(scrollYProgress, [0, 1], [0, -30])
+    const y2 = useTransform(scrollYProgress, [0, 1], [0, 30])
+    const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 10])
+    const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -10])
 
     useEffect(() => {
         setIsVisible(true)
@@ -103,39 +103,14 @@ export default function AboutUsSection({
             ref={sectionRef}
             className="w-full py-24 px-4 bg-[#030303] text-white overflow-hidden relative"
         >
-            {/* Decorative background elements */}
+            {/* Decorative background elements - Hidden on small mobile to save CPU */}
             <motion.div
-                className="absolute top-20 left-10 w-64 h-64 rounded-full bg-yellow-500/5 blur-3xl"
+                className="absolute top-20 left-10 w-64 h-64 rounded-full bg-yellow-500/5 blur-3xl hidden md:block will-change-transform"
                 style={{ y: y1, rotate: rotate1 }}
             />
             <motion.div
-                className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-purple-500/5 blur-3xl"
+                className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-purple-500/5 blur-3xl hidden md:block will-change-transform"
                 style={{ y: y2, rotate: rotate2 }}
-            />
-            <motion.div
-                className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-yellow-400/30"
-                animate={{
-                    y: [0, -15, 0],
-                    opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                    duration: 3,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                }}
-            />
-            <motion.div
-                className="absolute bottom-1/3 right-1/4 w-6 h-6 rounded-full bg-purple-400/30"
-                animate={{
-                    y: [0, 20, 0],
-                    opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                    duration: 4,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                    delay: 1,
-                }}
             />
 
             <motion.div
@@ -348,11 +323,11 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay 
             </p>
 
             <motion.div
-                className="mt-6 flex items-center justify-center text-yellow-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+                className="mt-6 flex items-center justify-center text-yellow-400 text-xs font-medium opacity-0 md:group-hover:opacity-100 md:opacity-0 opacity-100 md:translate-y-2 group-hover:translate-y-0 transition-all duration-300"
             >
-                <span className="flex items-center gap-1 cursor-pointer">
-                    DISCOVER MORE <ArrowRight className="w-3 h-3" />
-                </span>
+                <a href="tel:8240721057" className="flex items-center gap-1 cursor-pointer">
+                    CALL NOW <ArrowRight className="w-3 h-3" />
+                </a>
             </motion.div>
         </motion.div>
     )

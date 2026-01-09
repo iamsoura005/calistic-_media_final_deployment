@@ -49,24 +49,28 @@ export default function ServicesPage() {
             <NavBar items={navItems} />
 
             {/* Hero Section */}
-            <section className="relative pt-40 pb-20 px-6 overflow-hidden">
+            <section className="relative pt-24 md:pt-40 pb-16 md:pb-32 px-4 md:px-12 lg:px-24 overflow-hidden">
                 <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-yellow-500/10 to-transparent blur-3xl opacity-30 pointer-events-none" />
 
-                <div className="container mx-auto max-w-6xl relative z-10">
+                <div className="container mx-auto relative z-10">
                     <motion.div
-                        className="flex flex-col items-center mb-12"
-                        initial={{ opacity: 0, scale: 0.9 }}
+                        className="flex flex-col items-center gap-4 md:gap-6 mb-8 md:mb-12 text-center"
+                        initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                     >
-                        <img src="/logo-gold.png" alt="Calistic Media" className="h-24 md:h-32 w-auto mb-8" />
+                        <img src="/logo-gold.png" alt="Calistic Media" className="h-16 md:h-24 w-auto mb-2" />
                         <motion.span
-                            className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase mb-4 block"
+                            className="text-yellow-400 text-[10px] md:text-sm font-semibold tracking-[0.4em] uppercase flex items-center gap-3"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
                         >
+                            <Sparkles className="w-4 h-4" />
                             Our Expertise
                         </motion.span>
                     </motion.div>
                     <motion.h1
-                        className="text-6xl md:text-8xl font-extralight tracking-tight leading-tight mb-8 text-center"
+                        className="text-4xl sm:text-6xl md:text-8xl font-extralight tracking-tight leading-[1.1] md:leading-tight mb-6 md:mb-8 text-center"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
@@ -75,7 +79,7 @@ export default function ServicesPage() {
                         <span className="text-yellow-400 italic">Impact.</span>
                     </motion.h1>
                     <motion.p
-                        className="text-white/50 text-xl font-light max-w-2xl leading-relaxed text-center mx-auto"
+                        className="text-white/50 text-base md:text-xl font-light max-w-2xl leading-relaxed text-center mx-auto px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}

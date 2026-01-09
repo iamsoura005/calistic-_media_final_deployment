@@ -52,29 +52,29 @@ export default function ContactPage() {
         <main className="min-h-screen bg-[#030303] text-white scroll-smooth">
             <NavBar items={navItems} />
 
-            <section className="relative pt-40 pb-32 px-6 overflow-hidden">
+            <section className="relative pt-24 md:pt-40 pb-16 md:pb-32 px-4 md:px-6 overflow-hidden">
                 {/* Background Ambient Glows */}
-                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-yellow-500/10 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
-                <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/10 blur-[100px] rounded-full translate-y-1/2 pointer-events-none" />
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-yellow-500/10 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none hidden md:block" />
+                <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/10 blur-[100px] rounded-full translate-y-1/2 pointer-events-none hidden md:block" />
 
                 <div className="container mx-auto max-w-6xl relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                         {/* Left Side: Header Content */}
-                        <div className="space-y-12">
-                            <div className="space-y-6">
-                                <div className="flex flex-col items-center lg:items-start gap-4 mb-4">
-                                    <img src="/logo-gold.png" alt="Calistic Media" className="h-20 w-auto mb-4" />
+                        <div className="space-y-8 md:space-y-12 text-center lg:text-left">
+                            <div className="space-y-4 md:space-y-6">
+                                <div className="flex flex-col items-center lg:items-start gap-4 mb-2 md:mb-4">
+                                    <img src="/logo-gold.png" alt="Calistic Media" className="h-16 md:h-20 w-auto mb-2 md:mb-4" />
                                     <motion.span
-                                        className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase flex items-center gap-3"
+                                        className="text-yellow-400 text-[10px] md:text-xs font-semibold tracking-[0.4em] uppercase flex items-center justify-center lg:justify-start gap-3"
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                     >
-                                        <Sparkles className="w-4 h-4" />
+                                        <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
                                         Get In Touch
                                     </motion.span>
                                 </div>
                                 <motion.h1
-                                    className="text-6xl md:text-8xl font-extralight tracking-tight leading-tight"
+                                    className="text-4xl sm:text-6xl md:text-8xl font-extralight tracking-tight leading-[1.1] md:leading-tight"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 }}
@@ -83,7 +83,7 @@ export default function ContactPage() {
                                     <span className="text-yellow-400 italic">your legacy.</span>
                                 </motion.h1>
                                 <motion.p
-                                    className="text-white/50 text-xl font-light max-w-md leading-relaxed"
+                                    className="text-white/50 text-base md:text-xl font-light max-w-md mx-auto lg:mx-0 leading-relaxed"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2 }}

@@ -167,7 +167,7 @@ export default function HeroGeometric({
                         animate="visible"
                         className="will-change-transform"
                     >
-                        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight mb-8 md:mb-12 tracking-tighter leading-[1.05] md:leading-none">
+                        <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight mb-6 md:mb-12 tracking-tighter leading-[1.1] md:leading-none">
                             <motion.span
                                 className="block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50"
                                 animate={{ opacity: [0.9, 1, 0.9] }}
@@ -177,7 +177,7 @@ export default function HeroGeometric({
                             </motion.span>
                             <motion.span
                                 className={cn(
-                                    "block bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-amber-300 italic font-medium py-2"
+                                    "block bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-amber-300 italic font-medium py-1 md:py-2"
                                 )}
                                 animate={{
                                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
@@ -201,7 +201,7 @@ export default function HeroGeometric({
                         animate="visible"
                         className="flex flex-col items-center will-change-transform"
                     >
-                        <p className="text-sm sm:text-lg md:text-xl text-white/40 mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
+                        <p className="text-xs sm:text-lg md:text-xl text-white/40 mb-8 md:mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
                             Driving sustainable <span className="text-yellow-500/60 font-medium">ROI</span> through pure organic ways. We thoroughly understand where to work and how to scale your brand Pan India.
                         </p>
                     </motion.div>

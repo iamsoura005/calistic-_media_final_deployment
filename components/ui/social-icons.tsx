@@ -1,42 +1,44 @@
 "use client"
 
 import { useState } from "react"
-import { Instagram, Facebook, Youtube, MessageCircle, Mail, Twitter } from "lucide-react"
+import { Instagram, Facebook, Youtube, MessageCircle, Mail, Phone, Twitter } from "lucide-react"
 
 const socials = [
     {
         name: "Instagram",
         href: "https://www.instagram.com/calisticmedia?igsh=NTEydzg4NmN6dnM2",
         icon: <Instagram className="size-[18px]" />,
+        isExternal: true
     },
     {
         name: "Facebook",
         href: "#",
         icon: <Facebook className="size-[18px]" />,
+        isExternal: true
     },
     {
         name: "YouTube",
         href: "#",
         icon: <Youtube className="size-[18px]" />,
+        isExternal: true
     },
     {
         name: "WhatsApp",
         href: "https://wa.me/918240721057",
         icon: <MessageCircle className="size-[18px]" />,
+        isExternal: true
     },
     {
         name: "Email",
         href: "mailto:calisticproduction@gmail.com",
         icon: <Mail className="size-[18px]" />,
+        isExternal: false
     },
     {
-        name: "X",
-        href: "#",
-        icon: (
-            <svg viewBox="0 0 24 24" fill="currentColor" className="size-[18px]">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-        ),
+        name: "Call",
+        href: "tel:8240721057",
+        icon: <Phone className="size-[18px]" />,
+        isExternal: false
     },
 ]
 
@@ -51,8 +53,8 @@ export function SocialIcons() {
                 <a
                     key={social.name}
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={social.isExternal ? "_blank" : undefined}
+                    rel={social.isExternal ? "noopener noreferrer" : undefined}
                     className="group relative flex items-center justify-center size-10 rounded-xl transition-colors duration-200"
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
