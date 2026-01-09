@@ -12,8 +12,8 @@ export default function Home() {
       <Navbar />
       <HeroGeometric
         badge="Pure Organic Growth"
-        title1="Organic"
-        title2="Growth Mastery"
+        title1="Calistic"
+        title2="Media"
       />
       <AboutUsSection />
       <WhatsAppButton />

@@ -231,7 +231,7 @@ export default function AboutUsSection() {
                                 <img
                                     src="/calistic-logo.png"
                                     alt="Calistic Media"
-                                    className="w-full h-full object-contain brightness-110 drop-shadow-[0_0_20px_rgba(250,204,21,0.2)]"
+                                    className="w-full h-full object-contain"
                                 />
                             </motion.div>
 

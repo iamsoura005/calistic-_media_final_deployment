@@ -35,12 +35,9 @@ export function Navbar() {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl overflow-hidden bg-transparent drop-shadow-2xl">
+                    <div className="w-14 h-14 overflow-hidden bg-transparent">
                         <img src="/calistic-logo.png" alt="Calistic logo" className="w-full h-full object-contain" />
                     </div>
-                    <span className="text-xl font-light tracking-widest text-white uppercase hidden sm:block">
-                        Calistic <span className="text-yellow-400 font-bold">Media</span>
-                    </span>
                 </div>
 
                 {/* Desktop Menu */}

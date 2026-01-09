@@ -44,7 +44,7 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-4 mb-8">
-                            <div className="w-12 h-12 rounded-xl overflow-hidden bg-transparent drop-shadow-2xl">
+                            <div className="w-12 h-12 overflow-hidden bg-transparent">
                                 <img src="/calistic-logo.png" alt="Logo" className="w-full h-full object-contain" />
                             </div>
                             <span className="text-2xl font-light tracking-[0.2em] text-white uppercase italic">
