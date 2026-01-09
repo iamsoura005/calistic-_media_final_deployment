@@ -33,6 +33,10 @@ export default function AboutUsSection() {
         setIsVisible(true)
     }, [])
 
+    const scrollToLeadCapture = () => {
+        document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })
+    }
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -201,13 +205,12 @@ export default function AboutUsSection() {
                             variants={itemVariants}
                         >
                             <motion.button
-                                className="group relative bg-yellow-500 hover:bg-yellow-400 text-black px-10 py-4 rounded-full flex items-center gap-3 text-sm font-bold transition-all duration-300 shadow-xl shadow-yellow-500/20"
+                                className="group relative px-12 py-5 bg-yellow-500 hover:bg-yellow-400 text-black rounded-full font-bold text-lg transition-all duration-300 shadow-[0_0_30px_rgba(250,204,21,0.2)] hover:shadow-[0_0_50px_rgba(250,204,21,0.4)]"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                onClick={() => document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })}
+                                onClick={scrollToLeadCapture}
                             >
-                                Inquire Now
-                                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                <span className="relative z-10">Inquire Now</span>
                             </motion.button>
                         </motion.div>
                     </motion.div>
@@ -224,20 +227,24 @@ export default function AboutUsSection() {
                             <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-yellow-500/20 via-transparent to-purple-500/20 blur-[10px]" />
 
                             <motion.div
-                                className="relative w-full h-full rounded-[2.5rem] bg-transparent backdrop-blur-sm p-4 flex items-center justify-center overflow-hidden"
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                className="relative w-full h-full flex items-center justify-center p-8"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, ease: "easeOut" }}
                             >
+                                {/* Subtle background glow instead of box */}
+                                <div className="absolute inset-0 bg-yellow-500/5 blur-[100px] rounded-full pointer-events-none" />
                                 <img
                                     src="/calistic-logo.png"
                                     alt="Calistic Media"
-                                    className="w-full h-full object-contain"
+                                    className="w-full h-full object-contain relative z-10"
                                 />
                             </motion.div>
 
                             {/* Floating Element */}
                             <motion.div
-                                className="absolute -top-6 -right-6 w-20 h-20 bg-yellow-500/10 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center text-yellow-400 shadow-xl"
+                                className="absolute -top-6 -right-6 w-20 h-20 flex items-center justify-center text-yellow-400"
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                             >
@@ -388,7 +395,7 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
 
     return (
         <motion.div
-            className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl flex flex-col items-center text-center group hover:bg-white/10 transition-colors duration-300"
+            className="p-6 flex flex-col items-center text-center group transition-colors duration-300"
             variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: {

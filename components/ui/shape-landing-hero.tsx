@@ -61,10 +61,10 @@ export function ElegantShape({
                         "absolute inset-0 rounded-full",
                         "bg-gradient-to-r to-transparent",
                         gradient,
-                        "backdrop-blur-[2px] border-2 border-white/[0.15]",
-                        "shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
+                        "backdrop-blur-[1px] border border-white/[0.05]",
+                        "shadow-[0_8px_32px_0_rgba(255,255,255,0.05)]",
                         "after:absolute after:inset-0 after:rounded-full",
-                        "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"
+                        "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"
                     )}
                 />
             </motion.div>
@@ -166,18 +166,30 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+                        <h1 className="text-5xl sm:text-7xl md:text-9xl font-extralight mb-6 md:mb-8 tracking-tighter leading-none">
+                            <motion.span
+                                className="block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50"
+                                animate={{ opacity: [0.8, 1, 0.8] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            >
                                 {title1}
-                            </span>
-                            <br />
-                            <span
+                            </motion.span>
+                            <motion.span
                                 className={cn(
-                                    "bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white/90 to-amber-300 "
+                                    "block bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-amber-300 italic font-medium"
                                 )}
+                                animate={{
+                                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                                }}
+                                transition={{
+                                    duration: 8,
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                }}
+                                style={{ backgroundSize: "200% auto" }}
                             >
                                 {title2}
-                            </span>
+                            </motion.span>
                         </h1>
                     </motion.div>
 

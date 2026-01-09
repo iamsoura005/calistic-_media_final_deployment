@@ -77,7 +77,7 @@ export function LeadCapture() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <div className="bg-gradient-to-br from-white/10 to-white/[0.02] backdrop-blur-2xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+                        <div className="relative overflow-hidden p-8 md:p-12">
                             <AnimatePresence mode="wait">
                                 {!isSubmitted ? (
                                     <motion.form
@@ -143,7 +143,7 @@ export function LeadCapture() {
                                         <motion.button
                                             type="submit"
                                             disabled={loading}
-                                            className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 text-[#030303] py-5 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl shadow-yellow-500/20 transition-all duration-300 group"
+                                            className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 text-[#030303] py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(250,204,21,0.2)] transition-all duration-300 group"
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                         >
