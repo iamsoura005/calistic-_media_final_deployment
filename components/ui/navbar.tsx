@@ -34,7 +34,7 @@ export function Navbar() {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
-                <div className="flex items-center">
+                <div className="flex items-center justify-center md:items-start">
                     <div className="w-16 h-16 flex items-center justify-center">
                         <img src="/calistic-logo.png" alt="Calistic logo" className="w-full h-full object-contain" />
                     </div>

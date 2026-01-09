@@ -142,7 +142,7 @@ export default function AboutUsSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
                     {/* Left: Text Content */}
                     <motion.div
-                        className="space-y-8 text-left"
+                        className="space-y-8 text-center lg:text-left"
                         variants={containerVariants}
                     >
                         <motion.span
@@ -201,7 +201,7 @@ export default function AboutUsSection() {
                         </motion.div>
 
                         <motion.div
-                            className="pt-4"
+                            className="pt-4 flex justify-center lg:justify-start"
                             variants={itemVariants}
                         >
                             <motion.button
@@ -272,7 +272,7 @@ export default function AboutUsSection() {
                 {/* Stats Section with Scroll Animation */}
                 <motion.div
                     ref={statsRef}
-                    className="mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+                    className="mt-32 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-20"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}

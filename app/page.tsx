@@ -15,10 +15,10 @@ export default function Home() {
   useEffect(() => {
     const loaderTimer = setTimeout(() => {
       setIsLoading(false);
-      // Trigger popup 5 seconds after loading finishes
+      // Trigger popup 2 seconds after loading finishes
       const popupTimer = setTimeout(() => {
         setShowPopup(true);
-      }, 5000);
+      }, 2000);
       return () => clearTimeout(popupTimer);
     }, 3000);
     return () => clearTimeout(loaderTimer);

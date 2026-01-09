@@ -145,7 +145,7 @@ function HeroGeometric({
                 />
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6">
+            <div className="relative z-10 container mx-auto px-4 md:px-6 py-10 md:py-0 flex items-center justify-center min-h-[calc(100vh-80px)] md:min-h-screen">
                 <div className="max-w-3xl mx-auto text-center">
                     <motion.div
                         custom={0}
@@ -166,7 +166,7 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-5xl sm:text-7xl md:text-9xl font-extralight mb-6 md:mb-8 tracking-tighter leading-none">
+                        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extralight mb-6 md:mb-8 tracking-tighter leading-[1.1] md:leading-none">
                             <motion.span
                                 className="block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50"
                                 animate={{ opacity: [0.8, 1, 0.8] }}

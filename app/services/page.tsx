@@ -99,17 +99,17 @@ export default function ServicesPage() {
                         {services.map((service, idx) => (
                             <motion.div
                                 key={idx}
-                                className={`group relative grid grid-cols-1 lg:grid-cols-2 gap-20 items-center p-12 rounded-[3.5rem] border border-white/5 ${service.vibe} backdrop-blur-sm transition-all duration-700 hover:border-white/10`}
+                                className={`group relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] border border-white/5 ${service.vibe} backdrop-blur-sm transition-all duration-700 hover:border-white/10`}
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <div className="space-y-8">
+                                <div className="space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
                                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${service.vibe} ${service.accent} ${service.text} border shadow-xl`}>
                                         {service.icon}
                                     </div>
-                                    <h2 className="text-4xl md:text-5xl font-extralight tracking-tight">{service.title}</h2>
+                                    <h2 className="text-3xl md:text-5xl font-extralight tracking-tight">{service.title}</h2>
                                     <p className="text-white/60 text-lg font-light leading-relaxed">
                                         {service.description}
                                     </p>
