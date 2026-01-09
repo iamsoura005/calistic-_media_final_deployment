@@ -41,7 +41,7 @@ export function Navbar() {
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden md:flex items-center gap-6">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
@@ -51,15 +51,26 @@ export function Navbar() {
                             {link.name}
                         </a>
                     ))}
-                    <a href="/signin">
-                        <motion.button
-                            className="bg-yellow-500 hover:bg-yellow-400 text-[#030303] px-6 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-lg shadow-yellow-500/20"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            GET STARTED
-                        </motion.button>
-                    </a>
+                    <div className="flex items-center gap-3">
+                        <a href="https://wa.me/917439167389?text=I'm%20interested%20in%20a%20Free%20Consultation" target="_blank" rel="noopener noreferrer">
+                            <motion.button
+                                className="border border-yellow-500/50 hover:bg-yellow-500/10 text-yellow-500 px-5 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all duration-300 min-h-[44px]"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                FREE CONSULTATION
+                            </motion.button>
+                        </a>
+                        <a href="/signin">
+                            <motion.button
+                                className="bg-yellow-500 hover:bg-yellow-400 text-[#030303] px-6 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-lg shadow-yellow-500/20 min-h-[44px]"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                GET STARTED
+                            </motion.button>
+                        </a>
+                    </div>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -88,8 +99,13 @@ export function Navbar() {
                                 {link.name}
                             </a>
                         ))}
+                        <a href="https://wa.me/917439167389?text=I'm%20interested%20in%20a%20Free%20Consultation" target="_blank" rel="noopener noreferrer" className="w-full">
+                            <button className="w-full border border-yellow-500 text-yellow-500 px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 min-h-[44px]">
+                                FREE CONSULTATION
+                            </button>
+                        </a>
                         <a href="/signin" className="w-full">
-                            <button className="w-full bg-yellow-500 text-[#030303] px-8 py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
+                            <button className="w-full bg-yellow-500 text-[#030303] px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 min-h-[44px]">
                                 GET STARTED <ArrowRight className="w-4 h-4" />
                             </button>
                         </a>

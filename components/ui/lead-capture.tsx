@@ -38,8 +38,9 @@ export function LeadCapture() {
                                 Join the Movement
                             </span>
                             <h2 className="text-4xl md:text-6xl font-extralight tracking-tight leading-none mb-8 will-change-transform" id="lead-capture">
-                                Ready to <span className="text-yellow-400 italic">Grow?</span> <br />
-                                <span className="text-white/80 text-2xl md:text-4xl">Fill out the form below.</span>
+                                Ready to grow the <br />
+                                <span className="text-yellow-400 italic text-3xl md:text-5xl">Pure Organic Way?</span> <br />
+                                <span className="text-white/80 text-xl md:text-2xl mt-4 block font-light">Fill out your form below.</span>
                             </h2>
                             <p className="text-white/50 text-xl font-light leading-relaxed max-w-md">
                                 Partner with us to scale through pure organic ways. We thoroughly understand exactly where to work for maximum ROI.
@@ -143,16 +144,12 @@ export function LeadCapture() {
                                         <motion.button
                                             type="submit"
                                             disabled={loading}
-                                            className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 text-[#030303] py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(250,204,21,0.2)] transition-all duration-300 group"
+                                            className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 text-[#030303] py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(250,204,21,0.2)] transition-all duration-300 group min-h-[56px]"
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                         >
-                                            {loading ? "SENDING..." : (
-                                                <>
-                                                    KNOW MORE
-                                                    <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                                </>
-                                            )}
+                                            <span className="tracking-widest">START YOUR ORGANIC JOURNEY PAN INDIA</span>
+                                            <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                         </motion.button>
                                     </motion.form>
                                 ) : (

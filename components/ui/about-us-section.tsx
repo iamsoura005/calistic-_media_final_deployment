@@ -208,7 +208,7 @@ export default function AboutUsSection() {
                                 className="group relative px-12 py-5 bg-yellow-500 hover:bg-yellow-400 text-black rounded-full font-bold text-lg transition-all duration-300 shadow-[0_0_30px_rgba(250,204,21,0.2)] hover:shadow-[0_0_50px_rgba(250,204,21,0.4)]"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                onClick={scrollToLeadCapture}
+                                onClick={() => window.open("https://wa.me/917439167389?text=I'm%20interested%20in%20a%20Customized%20Organic%20Strategy", "_blank")}
                             >
                                 <span className="relative z-10">Inquire Now</span>
                             </motion.button>

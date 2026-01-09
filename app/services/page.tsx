@@ -122,10 +122,21 @@ export default function ServicesPage() {
                                         ))}
                                     </div>
                                     <motion.button
-                                        className={`flex items-center gap-2 ${service.text} text-sm font-medium pt-4 group-hover:gap-4 transition-all`}
+                                        className={`flex items-center gap-2 ${service.text} text-sm font-medium pt-4 group-hover:gap-4 transition-all min-h-[44px]`}
+                                        onClick={() => window.open(`https://wa.me/917439167389?text=I'm%20interested%20in%20${encodeURIComponent(service.title)}`, "_blank")}
                                     >
                                         Inquire about {service.title} <ArrowRight className="w-4 h-4" />
                                     </motion.button>
+                                    {service.title === "Organic Content Creation" && (
+                                        <a
+                                            href="https://wa.me/917439167389?text=I'd%20like%20a%20Free%20Strategy%20for%20Content%20Creation"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block text-yellow-500 text-xs underline mt-2"
+                                        >
+                                            Get Free Strategy
+                                        </a>
+                                    )}
                                 </div>
 
                                 <div className="relative aspect-square">

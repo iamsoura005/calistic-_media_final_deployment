@@ -147,7 +147,10 @@ export default function ContactPage() {
                                     <p className="text-white/50 font-light mb-8 text-sm leading-relaxed">
                                         Our strategy team responds within 2 hours. Start your trajectory today.
                                     </p>
-                                    <button className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-xl shadow-yellow-500/10">
+                                    <button
+                                        className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-xl shadow-yellow-500/20 min-h-[48px]"
+                                        onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                                    >
                                         Know More <ArrowRight className="w-4 h-4" />
                                     </button>
                                 </div>
