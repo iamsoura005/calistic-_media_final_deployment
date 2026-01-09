@@ -74,6 +74,7 @@ interface ModernSignInProps {
 export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
     const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
     const [isHovering, setIsHovering] = useState(false)
+    const [isSignUp, setIsSignUp] = useState(false)
 
     const handleMouseMove = (e: React.MouseEvent) => {
         const leftSection = e.currentTarget.getBoundingClientRect()
@@ -133,7 +134,9 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                             }
                         }}>
                             <div className='grid gap-4 md:gap-6 mb-2'>
-                                <h1 className='text-3xl md:text-4xl font-extrabold text-white'>Sign in</h1>
+                                <h1 className='text-3xl md:text-4xl font-extrabold text-white'>
+                                    {isSignUp ? 'Create Account' : 'Sign in'}
+                                </h1>
                                 <div className="social-container">
                                     <div className="flex items-center justify-center">
                                         <ul className="flex gap-3 md:gap-4">
@@ -158,7 +161,9 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                                         </ul>
                                     </div>
                                 </div>
-                                <span className='text-sm text-white/50'>or use your account</span>
+                                <span className='text-sm text-white/50'>
+                                    {isSignUp ? 'or use your email for registration' : 'or use your account'}
+                                </span>
                             </div>
                             <div className='grid gap-4 items-center'>
                                 <AppInput placeholder="Email" type="email" />
@@ -169,10 +174,19 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                                 <button
                                     className="group/button relative inline-flex justify-center items-center overflow-hidden rounded-md bg-yellow-500 px-8 py-3 text-sm font-medium text-white transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/50 cursor-pointer"
                                 >
-                                    <span className="text-sm px-2 py-1">Sign In</span>
+                                    <span className="text-sm px-2 py-1">{isSignUp ? 'Sign Up' : 'Sign In'}</span>
                                     <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                                         <div className="relative h-full w-8 bg-white/20" />
                                     </div>
+                                </button>
+                            </div>
+                            <div className="mt-4">
+                                <button
+                                    type="button"
+                                    onClick={() => setIsSignUp(!isSignUp)}
+                                    className="text-white/50 hover:text-yellow-400 text-sm transition-colors"
+                                >
+                                    {isSignUp ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
                                 </button>
                             </div>
                         </form>

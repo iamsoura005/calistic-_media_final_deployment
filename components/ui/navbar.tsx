@@ -19,8 +19,9 @@ export function Navbar() {
     const navLinks = [
         { name: "Home", href: "/" },
         { name: "Services", href: "/services" },
-        { name: "About", href: "#about-section" },
+        { name: "About", href: "/#about-section" },
         { name: "Contact", href: "/contact" },
+        { name: "Sign In", href: "/signin" },
     ]
 
     return (
@@ -53,13 +54,13 @@ export function Navbar() {
                             {link.name}
                         </a>
                     ))}
-                    <a href="/contact">
+                    <a href="/signin" className="w-full">
                         <motion.button
-                            className="bg-yellow-500 hover:bg-yellow-400 text-[#030303] px-6 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg shadow-yellow-500/20"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-xl font-bold tracking-widest transition-all duration-300 shadow-xl shadow-yellow-500/20"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                         >
-                            START A PROJECT <ArrowRight className="w-3 h-3" />
+                            GET STARTED
                         </motion.button>
                     </a>
                 </div>

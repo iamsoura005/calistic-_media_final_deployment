@@ -86,14 +86,16 @@ export function SignUpPopup({ isOpen, onClose }: SignUpPopupProps) {
                                     />
                                 </div>
 
-                                <motion.button
-                                    type="submit"
-                                    className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-xl font-semibold flex items-center justify-center gap-2 mt-6 shadow-lg shadow-yellow-500/20"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    GET STARTED <ArrowRight className="h-4 w-4" />
-                                </motion.button>
+                                <a href="/signin" className="w-full">
+                                    <motion.button
+                                        type="button"
+                                        className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-xl font-semibold flex items-center justify-center gap-2 mt-6 shadow-lg shadow-yellow-500/20"
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        GET STARTED <ArrowRight className="h-4 w-4" />
+                                    </motion.button>
+                                </a>
                             </form>
 
                             <p className="text-[10px] text-center text-white/20 uppercase tracking-[0.2em]">
