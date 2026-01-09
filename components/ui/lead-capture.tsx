@@ -78,17 +78,19 @@ export function LeadCapture() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <div className="relative overflow-hidden p-8 md:p-12">
+                        <div className="relative overflow-hidden p-4 md:p-12">
                             <AnimatePresence mode="wait">
                                 {!isSubmitted ? (
                                     <motion.form
                                         key="form"
                                         onSubmit={handleSubmit}
-                                        className="space-y-6"
-                                        initial={{ opacity: 1 }}
+                                        className="space-y-6 md:space-y-8"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
                                         exit={{ opacity: 0, scale: 0.95 }}
+                                        transition={{ duration: 0.4 }}
                                     >
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                             <div className="space-y-2">
                                                 <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">Full Name</label>
                                                 <div className="relative">
@@ -96,88 +98,81 @@ export function LeadCapture() {
                                                     <input
                                                         type="text"
                                                         required
-                                                        placeholder="John Doe"
-                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
+                                                        placeholder="Full Name"
+                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
                                                     />
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">Brand / Handle</label>
+                                                <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">Email Address</label>
                                                 <div className="relative">
-                                                    <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
+                                                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
                                                     <input
-                                                        className="space-y-6 md:space-y-8"
-                                                        initial={{ opacity: 0 }}
-                                                        animate={{ opacity: 1 }}
-                                                        transition={{ delay: 0.2 }}
-                                                    >
-                                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                                                            <div className="space-y-2">
-                                                                <input
-                                                                    type="text"
-                                                                    placeholder="NAME"
-                                                                    className="w-full bg-white/5 border-b border-white/20 px-4 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500 transition-all text-sm tracking-widest"
-                                                                    required
-                                                                />
-                                                            </div>
-                                                            <div className="space-y-2">
-                                                                <input
-                                                                    type="email"
-                                                                    placeholder="EMAIL"
-                                                                    className="w-full bg-white/5 border-b border-white/20 px-4 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500 transition-all text-sm tracking-widest"
-                                                                    required
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <textarea
-                                                                placeholder="TELL US YOUR TARGETS..."
-                                                                rows={4}
-                                                                className="w-full bg-white/5 border-b border-white/20 px-4 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500 transition-all text-sm tracking-widest resize-none"
-                                                            />
-                                                        </div>
-                                                        <motion.button
-                                                            type="submit"
-                                                            disabled={loading}
-                                                            className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 text-[#030303] py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(250,204,21,0.2)] transition-all duration-300 group min-h-[56px]"
-                                                            whileHover={{ scale: 1.02 }}
-                                                            whileTap={{ scale: 0.98 }}
-                                                        >
-                                                            <span className="tracking-widest">START YOUR ORGANIC JOURNEY PAN INDIA</span>
-                                                            <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                                        </motion.button>
-                                                    </motion.form>
-                                                    ) : (
-                                                    <motion.div
-                                                        key="success"
-                                                        className="text-center py-12 space-y-6"
-                                                        initial={{ opacity: 0, scale: 0.9 }}
-                                                        animate={{ opacity: 1, scale: 1 }}
-                                                    >
-                                                        <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto text-yellow-500 mb-6">
-                                                            <CheckCircle className="w-10 h-10" />
-                                                        </div>
-                                                        <h3 className="text-3xl font-light text-white">Objective Received.</h3>
-                                                        <p className="text-white/50 font-light">
-                                                            Our strategic team will review your <br /> brand vision and reach out shortly.
-                                                        </p>
-                                                        <button
-                                                            onClick={() => setIsSubmitted(false)}
-                                                            className="text-yellow-500 text-sm font-medium hover:underline pt-4"
-                                                        >
-                                                            Send another objective
-                                                        </button>
-                                                    </motion.div>
-                                )}
-                                                </AnimatePresence>
+                                                        type="email"
+                                                        required
+                                                        placeholder="Email Address"
+                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
+                                                    />
+                                                </div>
                                             </div>
+                                        </div>
 
-                                            {/* Decorative floating elements - Simplified blur */}
-                                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/10 blur-2xl rounded-full pointer-events-none" />
-                                            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-yellow-500/10 blur-2xl rounded-full pointer-events-none" />
-                                        </motion.div>
-                                    </div>
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">Your Objective</label>
+                                            <div className="relative">
+                                                <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-white/20" />
+                                                <textarea
+                                                    required
+                                                    placeholder="Tell us about your brand goals..."
+                                                    rows={4}
+                                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all resize-none"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <motion.button
+                                            type="submit"
+                                            disabled={loading}
+                                            className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 text-[#030303] py-5 rounded-full font-bold flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(250,204,21,0.2)] transition-all duration-300 group min-h-[56px]"
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                        >
+                                            <span className="tracking-widest">{loading ? "SENDING..." : "START YOUR ORGANIC JOURNEY PAN INDIA"}</span>
+                                            <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                        </motion.button>
+                                    </motion.form>
+                                ) : (
+                                    <motion.div
+                                        key="success"
+                                        className="text-center py-12 space-y-6"
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.4 }}
+                                    >
+                                        <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto text-yellow-500 mb-6 font-bold">
+                                            <CheckCircle className="w-10 h-10" />
+                                        </div>
+                                        <h3 className="text-3xl font-light text-white">Objective Received.</h3>
+                                        <p className="text-white/50 font-light">
+                                            Our strategic team will review your <br /> brand vision and reach out shortly.
+                                        </p>
+                                        <button
+                                            onClick={() => setIsSubmitted(false)}
+                                            className="text-yellow-500 text-sm font-medium hover:underline pt-4"
+                                        >
+                                            Send another objective
+                                        </button>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Decorative floating elements */}
+                        <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/5 blur-2xl rounded-full pointer-events-none" />
+                        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-yellow-500/5 blur-2xl rounded-full pointer-events-none" />
+                    </motion.div>
+                </div>
             </div>
-                    </section >
-                    )
+        </section>
+    )
 }
