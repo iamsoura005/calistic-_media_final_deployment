@@ -9,7 +9,7 @@ export default function SignInPage() {
     const navItems = [
         { name: "Home", url: "/", icon: Home },
         { name: "Services", url: "/services", icon: Layout },
-        { name: "Features", url: "/#features", icon: Sparkles },
+        { name: "Features", url: "/features", icon: Sparkles },
         { name: "Contact", url: "/contact", icon: MessageSquare }
     ];
 

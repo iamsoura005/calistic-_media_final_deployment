@@ -10,7 +10,7 @@ export default function ContactPage() {
     const navItems = [
         { name: "Home", url: "/", icon: Home },
         { name: "Services", url: "/services", icon: Layout },
-        { name: "Features", url: "/#features", icon: Sparkles },
+        { name: "Features", url: "/features", icon: Sparkles },
         { name: "Contact", url: "/contact", icon: MessageSquare }
     ];
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
         {
             icon: <MapPin className="w-6 h-6" />,
             label: "Visit Us",
-            value: "Our Location",
+            value: "117 B, Jodhpur Park, Kolkata",
             href: "https://www.google.com/maps/search/117+b,+jodhpur+park,+kol+68,+near+Dhakuria+bus+stand+opp+jodhpur+park+girls+school+beside+indian+bank,+gita+bhaban",
             color: "text-purple-400",
             bg: "bg-purple-500/10"
@@ -42,7 +42,7 @@ export default function ContactPage() {
     ]
 
     const socials = [
-        { icon: <Instagram />, label: "Instagram", href: "#" },
+        { icon: <Instagram />, label: "Instagram", href: "https://www.instagram.com/calisticmedia?igsh=NTEydzg4NmN6dnM2" },
         { icon: <Linkedin />, label: "LinkedIn", href: "#" },
         { icon: <Facebook />, label: "Facebook", href: "#" },
         { icon: <Twitter />, label: "Twitter", href: "#" }
@@ -62,14 +62,17 @@ export default function ContactPage() {
                         {/* Left Side: Header Content */}
                         <div className="space-y-12">
                             <div className="space-y-6">
-                                <motion.span
-                                    className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase flex items-center gap-3"
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                >
-                                    <Sparkles className="w-4 h-4" />
-                                    Get In Touch
-                                </motion.span>
+                                <div className="flex flex-col items-center lg:items-start gap-4 mb-4">
+                                    <img src="/logo-gold.png" alt="Calistic Media" className="h-20 w-auto mb-4" />
+                                    <motion.span
+                                        className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase flex items-center gap-3"
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                    >
+                                        <Sparkles className="w-4 h-4" />
+                                        Get In Touch
+                                    </motion.span>
+                                </div>
                                 <motion.h1
                                     className="text-6xl md:text-8xl font-extralight tracking-tight leading-tight"
                                     initial={{ opacity: 0, y: 20 }}
@@ -157,9 +160,9 @@ export default function ContactPage() {
                                     </p>
                                     <button
                                         className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-xl shadow-yellow-500/20 min-h-[48px]"
-                                        onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                                        onClick={() => window.open(`https://wa.me/918240721057?text=I'd%20like%20to%20enquire%20about%20Calistic%20Media%20services`, "_blank")}
                                     >
-                                        Know More <ArrowRight className="w-4 h-4" />
+                                        Inquire via WhatsApp <ArrowRight className="w-4 h-4" />
                                     </button>
                                 </div>
                                 <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-yellow-500/10 blur-3xl rounded-full" />

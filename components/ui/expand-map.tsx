@@ -58,7 +58,7 @@ export function LocationMap({
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={handleMouseLeave}
-            onClick={handleClick}
+            onClick={() => window.open("https://www.google.com/maps/search/117+b,+jodhpur+park,+kol+68,+near+Dhakuria+bus+stand+opp+jodhpur+park+girls+school+beside+indian+bank,+gita+bhaban", "_blank")}
         >
             <motion.div
                 className="relative overflow-hidden rounded-2xl bg-zinc-900 border border-white/10"

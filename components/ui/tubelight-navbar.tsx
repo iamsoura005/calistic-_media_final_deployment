@@ -34,10 +34,20 @@ export function NavBar({ items, className }: NavBarProps) {
     return (
         <div
             className={cn(
-                "fixed top-0 left-1/2 -translate-x-1/2 z-[1000] pt-6 will-change-transform",
+                "fixed top-0 left-1/2 -translate-x-1/2 z-[1000] pt-6 will-change-transform flex flex-col items-center gap-4",
                 className,
             )}
         >
+            <Link href="/" className="group mb-2">
+                <motion.img
+                    src="/logo-gold.png"
+                    alt="Calistic Media"
+                    className="h-10 md:h-14 w-auto drop-shadow-[0_0_15px_rgba(250,204,21,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(250,204,21,0.5)] transition-all duration-300"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                />
+            </Link>
+
             <div className="flex items-center gap-1 bg-[#030303]/40 border border-white/10 backdrop-blur-xl py-1.5 px-1.5 rounded-full shadow-2xl">
                 {items.map((item) => {
                     const Icon = item.icon

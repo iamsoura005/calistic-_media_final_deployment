@@ -10,6 +10,7 @@ import FooterSection from "@/components/ui/footer";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { GooeyLoader } from "@/components/ui/loader-10";
 import { SignUpPopup } from "@/components/ui/sign-up-popup";
+import AboutUsSection from "@/components/ui/about-us-section";
 
 export default function LandingPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +31,7 @@ export default function LandingPage() {
   const navItems = [
     { name: "Home", url: "#", icon: HomeIcon },
     { name: "Services", url: "/services", icon: Layout },
-    { name: "Features", url: "#features", icon: Sparkles },
+    { name: "Features", url: "/features", icon: Sparkles },
     { name: "Contact", url: "/contact", icon: MessageSquare }
   ];
 
@@ -55,6 +56,8 @@ export default function LandingPage() {
       <section id="features">
         <FeaturesSectionWithCardGradient />
       </section>
+
+      <AboutUsSection />
 
       <section className="py-24 bg-[#030303] flex justify-center px-6">
         <div className="flex flex-col items-center gap-8">

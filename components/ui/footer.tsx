@@ -12,16 +12,14 @@ import {
 
 const links = [
     { title: 'Home', href: '/' },
-    { title: 'About', href: '#about' },
     { title: 'Services', href: '/services' },
+    { title: 'Features', href: '/features' },
     { title: 'Contact', href: '/contact' },
 ]
 
 const socials = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Share2, href: '#', label: 'Share' },
-    { icon: MessageCircle, href: '#', label: 'WhatsApp' },
-    { icon: Globe, href: '#', label: 'Website' },
+    { icon: Instagram, href: 'https://www.instagram.com/calisticmedia?igsh=NTEydzg4NmN6dnM2', label: 'Instagram' },
+    { icon: MessageCircle, href: 'https://wa.me/918240721057', label: 'WhatsApp' },
 ]
 
 export default function FooterSection() {

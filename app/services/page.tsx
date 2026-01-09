@@ -8,28 +8,28 @@ import { Zap, Camera, Users, Target, BarChart, Rocket, ChevronRight, ArrowRight 
 
 const services = [
     {
-        title: "Customized Organic Strategy",
-        description: "Scale your brand with pure organic reach. We build long-term brand equity without relying on heavy ad spend. Our R&D team pinpoints exactly where to work for maximum ROI.",
-        icon: <Target className="w-6 h-6" />,
-        features: ["Audience Analysis", "SEO Optimized", "Conversion Focus", "Long-term Scale"],
+        title: "Influencer Marketing",
+        description: "Scale your brand with 50,000+ creators network. We build long-term brand equity through strategic partnerships that resonate with your target audience across India.",
+        icon: <Users className="w-6 h-6" />,
+        features: ["Audience Analysis", "Niche Targeting", "Engagement Focus", "Long-term Scale"],
         vibe: "bg-yellow-500/5",
         accent: "border-yellow-500/20",
         text: "text-yellow-400"
     },
     {
-        title: "Organic Content Creation",
-        description: "Narratives that resonate. Extraordinary content plans designed for engagement and platform-specific digital resonance. High-end UGC and reaction content.",
+        title: "Content Creation",
+        description: "Extraordinary narratives that stop the scroll. High-end UGC, reaction content, and cinematic plans designed for digital platform resonance.",
         icon: <Camera className="w-6 h-6" />,
-        features: ["UGC Reactives", "Brand Narratives", "Digital Strategy", "Engagement Optimization"],
+        features: ["UGC Reactives", "Brand Narratives", "Digital Strategy", "Platform Optimization"],
         vibe: "bg-amber-500/5",
         accent: "border-amber-500/20",
         text: "text-amber-400"
     },
     {
-        title: "Strategic Campaigns",
-        description: "Data-driven strategies designed to maximize ROI. We don't just post; we create movements.",
+        title: "Customized Campaigns",
+        description: "Data-driven strategies engineered for maximum ROI. We don't just post; we create movements that drive measurable business results.",
         icon: <Target className="w-6 h-6" />,
-        features: ["Audience Analysis", "SEO Optimized", "Conversion Focus", "Long-term Scale"],
+        features: ["ROI Mapping", "SEO Optimized", "Conversion Focus", "Market Analysis"],
         vibe: "bg-orange-500/5",
         accent: "border-orange-500/20",
         text: "text-orange-400"
@@ -40,7 +40,7 @@ export default function ServicesPage() {
     const navItems = [
         { name: "Home", url: "/", icon: Home },
         { name: "Services", url: "/services", icon: Layout },
-        { name: "Features", url: "/#features", icon: Sparkles },
+        { name: "Features", url: "/features", icon: Sparkles },
         { name: "Contact", url: "/contact", icon: MessageSquare }
     ];
 
@@ -53,15 +53,20 @@ export default function ServicesPage() {
                 <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-yellow-500/10 to-transparent blur-3xl opacity-30 pointer-events-none" />
 
                 <div className="container mx-auto max-w-6xl relative z-10">
-                    <motion.span
-                        className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase mb-6 block"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                    <motion.div
+                        className="flex flex-col items-center mb-12"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
                     >
-                        Our Expertise
-                    </motion.span>
+                        <img src="/logo-gold.png" alt="Calistic Media" className="h-24 md:h-32 w-auto mb-8" />
+                        <motion.span
+                            className="text-yellow-400 text-xs font-semibold tracking-[0.4em] uppercase mb-4 block"
+                        >
+                            Our Expertise
+                        </motion.span>
+                    </motion.div>
                     <motion.h1
-                        className="text-6xl md:text-8xl font-extralight tracking-tight leading-tight mb-8"
+                        className="text-6xl md:text-8xl font-extralight tracking-tight leading-tight mb-8 text-center"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
@@ -93,7 +98,10 @@ export default function ServicesPage() {
                             <h3 className="text-2xl font-bold mb-2">Free Instant Consultation</h3>
                             <p className="text-white/60">Get a customized strategy for your brand&apos;s organic growth today.</p>
                         </div>
-                        <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-yellow-500/20">
+                        <button
+                            className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-yellow-500/20 active:scale-95"
+                            onClick={() => window.open(`https://wa.me/918240721057?text=I'd%20like%20to%20claim%20my%20Free%20Organic%20Growth%20Strategy`, "_blank")}
+                        >
                             Claim Free Strategy
                         </button>
                     </motion.div>

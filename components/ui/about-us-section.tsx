@@ -6,12 +6,18 @@ import { useInView, useScroll, useTransform, motion, useSpring, AnimatePresence 
 import {
     Zap, ArrowRight, Pen, PenTool, Building2, Sparkles, Star,
     CheckCircle, Smartphone, Globe, Layout, ChevronRight,
-    Award, Users, Calendar, TrendingUp
+    Award, Users, Calendar, TrendingUp, Target, Camera
 } from "lucide-react"
 import FooterSection from "./footer"
 import { LeadCapture } from "./lead-capture"
 
-export default function AboutUsSection() {
+export default function AboutUsSection({
+    showFooter = false,
+    showLeadCapture = false
+}: {
+    showFooter?: boolean
+    showLeadCapture?: boolean
+}) {
     const [isVisible, setIsVisible] = useState(false)
     const sectionRef = useRef<HTMLDivElement>(null)
     const statsRef = useRef<HTMLDivElement>(null)
@@ -59,27 +65,27 @@ export default function AboutUsSection() {
 
     const services = [
         {
-            icon: <TrendingUp className="w-6 h-6" />,
+            icon: <Users className="w-6 h-6" />,
             secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
-            title: "1. Customized Organic Strategy",
+            title: "1. Influencer Marketing",
             description:
-                "Growth that lasts. We specialize in organic reach that builds long-term brand equity without the heavy dependency on Meta or Google Ads. Our R&D team analyzes your brand's current trajectory to identify high-impact organic levers, ensuring a sustainable and scalable ROI. We don't just push; we pull through pure organic ways.",
+                "Growth that lasts. We specialize in organic reach through our massive network of 50,000+ creators. We build long-term brand equity without the heavy dependency on Meta or Google Ads. We don't just push; we pull through pure organic ways.",
             position: "left",
         },
         {
             icon: <PenTool className="w-6 h-6" />,
             secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
-            title: "2. Premium Content Narratives",
+            title: "2. Content Creation",
             description:
-                "Extraordinary content plans tailored for resonance. We create high-engagement UGC, reaction content, and cinematic narratives that stop the scroll. Every piece is engineered to fit into a larger organic strategy, ensuring your brand story resonates deeply across all digital platforms from day one.",
+                "Extraordinary content plans tailored for resonance. We create high-engagement UGC, reaction content, and cinematic narratives that stop the scroll. Every piece is engineered to fit into a larger organic strategy, ensuring your brand story resonates deeply.",
             position: "right",
         },
         {
-            icon: <Building2 className="w-6 h-6" />,
+            icon: <Target className="w-6 h-6" />,
             secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
-            title: "3. Pan-India Physical & Digital",
+            title: "3. Customized Campaigns",
             description:
-                "From digital screens to physical presence. We manage everything from influencer campaigns and gigs to events and physical promotions. Our process involves thorough surveys and market analysis to understand exactly where to work and where to pull for maximum impact across India.",
+                "From digital screens to physical presence. We manage everything from influencer campaigns and gigs to events and physical promotions. Our process involves thorough surveys and market analysis to understand exactly where to work for maximum impact.",
             position: "left",
         },
     ]
@@ -208,7 +214,7 @@ export default function AboutUsSection() {
                                 className="group relative px-12 py-5 bg-yellow-500 hover:bg-yellow-400 text-black rounded-full font-bold text-lg transition-all duration-300 shadow-[0_0_30px_rgba(250,204,21,0.2)] hover:shadow-[0_0_50px_rgba(250,204,21,0.4)]"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                onClick={() => window.open("https://wa.me/917439167389?text=I'm%20interested%20in%20a%20Customized%20Organic%20Strategy", "_blank")}
+                                onClick={() => window.open("https://wa.me/918240721057?text=I'm%20interested%20in%20a%20Customized%20Organic%20Strategy%20for%20Influencer%20Marketing", "_blank")}
                             >
                                 <span className="relative z-10">Inquire Now</span>
                             </motion.button>
@@ -227,7 +233,7 @@ export default function AboutUsSection() {
                             <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-yellow-500/20 via-transparent to-purple-500/20 blur-[10px]" />
 
                             <motion.div
-                                className="relative w-full h-full flex items-center justify-center p-8"
+                                className="relative w-full h-full flex items-center justify-center p-4 md:p-8"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
@@ -238,7 +244,7 @@ export default function AboutUsSection() {
                                 <img
                                     src="/logo-gold.png"
                                     alt="Calistic Media"
-                                    className="w-full h-full object-contain relative z-10"
+                                    className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(250,204,21,0.2)]"
                                 />
                             </motion.div>
 
@@ -291,10 +297,10 @@ export default function AboutUsSection() {
                 </motion.div>
 
                 {/* Lead Capture Section */}
-                <LeadCapture />
+                {showLeadCapture && <LeadCapture />}
 
                 {/* Global Footer */}
-                <FooterSection />
+                {showFooter && <FooterSection />}
             </motion.div>
         </section>
     )
