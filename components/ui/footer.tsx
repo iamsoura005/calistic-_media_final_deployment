@@ -44,15 +44,15 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-4 mb-8">
-                            <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 bg-black p-2 shadow-xl">
-                                <img src="/calistic-logo.jpg" alt="Logo" className="w-full h-full object-contain" />
+                            <div className="w-12 h-12 rounded-xl overflow-hidden bg-transparent drop-shadow-2xl">
+                                <img src="/calistic-logo.png" alt="Logo" className="w-full h-full object-contain" />
                             </div>
-                            <span className="text-2xl font-extralight tracking-[0.2em] text-white uppercase italic">
-                                Calistic <span className="text-yellow-400 font-medium">Media</span>
+                            <span className="text-2xl font-light tracking-[0.2em] text-white uppercase italic">
+                                Calistic <span className="text-yellow-400 font-bold">Media</span>
                             </span>
                         </div>
                         <p className="text-white/50 text-lg font-light leading-relaxed max-w-md mb-10">
-                            The art of human connection through authentic storytelling and strategic influence. Elevating brands in the digital landscape.
+                            Driving sustainable ROI through pure organic ways. Pan India Branding, content creation, and strategic growth.
                         </p>
                         <div className="flex items-center gap-5">
                             {socials.map((social, idx) => (

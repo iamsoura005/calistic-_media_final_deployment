@@ -35,11 +35,11 @@ export function Navbar() {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl overflow-hidden bg-transparent p-2 drop-shadow-2xl">
-                        <img src="/calistic-logo.png" alt="Logo" className="w-full h-full object-contain" />
+                    <div className="w-12 h-12 rounded-xl overflow-hidden bg-transparent drop-shadow-2xl">
+                        <img src="/calistic-logo.png" alt="Calistic logo" className="w-full h-full object-contain" />
                     </div>
-                    <span className="text-xl font-extralight tracking-widest text-white uppercase hidden sm:block">
-                        Calistic <span className="text-yellow-400 font-medium">Media</span>
+                    <span className="text-xl font-light tracking-widest text-white uppercase hidden sm:block">
+                        Calistic <span className="text-yellow-400 font-bold">Media</span>
                     </span>
                 </div>
 
@@ -54,11 +54,11 @@ export function Navbar() {
                             {link.name}
                         </a>
                     ))}
-                    <a href="/signin" className="w-full">
+                    <a href="/signin">
                         <motion.button
-                            className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-xl font-bold tracking-widest transition-all duration-300 shadow-xl shadow-yellow-500/20"
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+                            className="bg-yellow-500 hover:bg-yellow-400 text-[#030303] px-6 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-lg shadow-yellow-500/20"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             GET STARTED
                         </motion.button>

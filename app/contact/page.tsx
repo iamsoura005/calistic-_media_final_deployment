@@ -77,7 +77,7 @@ export default function ContactPage() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2 }}
                                 >
-                                    Whether you&apos;re a brand looking for scale or a creator seeking trajectory, we&apos;re here to engineer the connection.
+                                    Whether you&apos;re a brand looking for organic scale or a creator seeking a sustainable trajectory, we&apos;re here to engineer the connection.
                                 </motion.p>
                             </div>
 
@@ -148,7 +148,7 @@ export default function ContactPage() {
                                         Our strategy team responds within 2 hours. Start your trajectory today.
                                     </p>
                                     <button className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-xl shadow-yellow-500/10">
-                                        Launch Project Request <RocketIcon />
+                                        Know More <ArrowRight className="w-4 h-4" />
                                     </button>
                                 </div>
                                 <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-yellow-500/10 blur-3xl rounded-full" />

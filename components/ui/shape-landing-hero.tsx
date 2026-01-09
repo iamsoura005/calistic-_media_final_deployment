@@ -188,14 +188,13 @@ function HeroGeometric({
                         animate="visible"
                     >
                         <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-                            Crafting exceptional digital experiences through
-                            innovative design and cutting-edge technology.
+                            Driving sustainable ROI through pure organic ways. We thoroughly understand where to work and how to scale your brand Pan India.
                         </p>
                     </motion.div>
                 </div>
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
         </div>
     );
 }

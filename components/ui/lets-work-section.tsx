@@ -158,7 +158,7 @@ export function LetsWorkTogether() {
                                         }}
                                     >
                                         <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                            Calistic
+                                            Organic
                                         </span>
                                     </span>
                                 </span>
@@ -170,7 +170,7 @@ export function LetsWorkTogether() {
                                             opacity: isClicked ? 0 : 1,
                                         }}
                                     >
-                                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white/90 to-amber-300">Media</span>
+                                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white/90 to-amber-300">Growth</span>
                                     </span>
                                 </span>
                             </h2>

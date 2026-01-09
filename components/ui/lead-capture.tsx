@@ -37,20 +37,20 @@ export function LeadCapture() {
                             <span className="text-yellow-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4 block">
                                 Join the Movement
                             </span>
-                            <h2 className="text-4xl md:text-6xl font-extralight tracking-tight leading-none mb-8 will-change-transform">
-                                Design your <br />
-                                <span className="text-yellow-400 italic">Trajectory.</span>
+                            <h2 className="text-4xl md:text-6xl font-extralight tracking-tight leading-none mb-8 will-change-transform" id="lead-capture">
+                                Ready to <span className="text-yellow-400 italic">Grow?</span> <br />
+                                <span className="text-white/80 text-2xl md:text-4xl">Fill out the form below.</span>
                             </h2>
                             <p className="text-white/50 text-xl font-light leading-relaxed max-w-md">
-                                Partner with India&apos;s premier agency to bridge the gap between your brand and millions of engaged followers.
+                                Partner with us to scale through pure organic ways. We thoroughly understand exactly where to work for maximum ROI.
                             </p>
                         </motion.div>
 
                         <div className="space-y-6 pt-4">
                             {[
-                                { icon: <Sparkles className="w-5 h-5" />, text: "Custom Engineered Campaigns" },
-                                { icon: <User className="w-5 h-5" />, text: "Direct Creator Access" },
-                                { icon: <Briefcase className="w-5 h-5" />, text: "Measurable ROI & Growth" }
+                                { icon: <Sparkles className="w-5 h-5" />, text: "Pure Organic Growth Strategies" },
+                                { icon: <User className="w-5 h-5" />, text: "High-ROI Content Narratives" },
+                                { icon: <Briefcase className="w-5 h-5" />, text: "Pan-India Data Driven Reach" }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -149,7 +149,7 @@ export function LeadCapture() {
                                         >
                                             {loading ? "SENDING..." : (
                                                 <>
-                                                    SEND OBJECTIVE
+                                                    KNOW MORE
                                                     <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                                 </>
                                             )}

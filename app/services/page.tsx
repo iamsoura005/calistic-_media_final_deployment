@@ -7,19 +7,19 @@ import { Zap, Camera, Users, Target, BarChart, Rocket, ChevronRight, ArrowRight 
 
 const services = [
     {
-        title: "Influencer Marketing",
-        description: "Scale your brand with India's top creators. We manage everything from discovery to execution and reporting.",
-        icon: <Users className="w-6 h-6" />,
-        features: ["Creator Sourcing", "Campaign Management", "Contracting", "Performance Tracking"],
+        title: "Customized Organic Strategy",
+        description: "Scale your brand with pure organic reach. We build long-term brand equity without relying on heavy ad spend. Our R&D team pinpoints exactly where to work for maximum ROI.",
+        icon: <Target className="w-6 h-6" />,
+        features: ["Audience Analysis", "SEO Optimized", "Conversion Focus", "Long-term Scale"],
         vibe: "bg-yellow-500/5",
         accent: "border-yellow-500/20",
         text: "text-yellow-400"
     },
     {
-        title: "Content Creation",
-        description: "Visuals that defy the ordinary. High-end production that tells your brand's story with cinematic quality.",
+        title: "Organic Content Creation",
+        description: "Narratives that resonate. Extraordinary content plans designed for engagement and platform-specific digital resonance. High-end UGC and reaction content.",
         icon: <Camera className="w-6 h-6" />,
-        features: ["Professional Shoots", "Short Form Mastery", "Visual Identity", "UGC Directives"],
+        features: ["UGC Reactives", "Brand Narratives", "Digital Strategy", "Engagement Optimization"],
         vibe: "bg-amber-500/5",
         accent: "border-amber-500/20",
         text: "text-amber-400"
@@ -67,8 +67,28 @@ export default function ServicesPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                     >
-                        We combine human creativity with data-driven strategy to deliver influencer campaigns that don&apos;t just garner likes, but drive measurable business growth.
+                        We combine deep R&D with pure organic ways to deliver growth that doesn&apos;t just garner likes, but drives measurable, long-term ROI. <span className="text-yellow-400">Pan India Branding.</span>
                     </motion.p>
+                </div>
+            </section>
+
+            {/* Offer Section */}
+            <section className="py-12 px-6">
+                <div className="container mx-auto max-w-6xl">
+                    <motion.div
+                        className="p-8 rounded-3xl bg-gradient-to-r from-yellow-500/10 to-transparent border border-yellow-500/20 flex flex-col md:flex-row items-center justify-between gap-8"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <div>
+                            <h3 className="text-2xl font-bold mb-2">Free Instant Consultation</h3>
+                            <p className="text-white/60">Get a customized strategy for your brand&apos;s organic growth today.</p>
+                        </div>
+                        <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-yellow-500/20">
+                            Claim Free Strategy
+                        </button>
+                    </motion.div>
                 </div>
             </section>
 

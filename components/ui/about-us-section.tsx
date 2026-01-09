@@ -55,27 +55,27 @@ export default function AboutUsSection() {
 
     const services = [
         {
-            icon: <Pen className="w-6 h-6" />,
+            icon: <TrendingUp className="w-6 h-6" />,
             secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
-            title: "1. Influencer Marketing",
+            title: "1. Customized Organic Strategy",
             description:
-                "The Art of Human Connection. We don't just find followers; we identify voices that command attention. Our approach to influencer marketing is rooted in authenticity—bridging the gap between your brand and the right audience. We curate partnerships that feel natural, effortless, and powerful, ensuring your message doesn't just reach people, it moves them.",
+                "Growth that lasts. We specialize in organic reach that builds long-term brand equity without the heavy dependency on Meta or Google Ads. Our R&D team analyzes your brand's current trajectory to identify high-impact organic levers, ensuring a sustainable and scalable ROI. We don't just push; we pull through pure organic ways.",
             position: "left",
         },
         {
             icon: <PenTool className="w-6 h-6" />,
             secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
-            title: "2. Content Creation",
+            title: "2. Premium Content Narratives",
             description:
-                "Visuals That Defy the Ordinary. In a world of constant noise, we create the silence. From cinematic production to high-end social media aesthetics, our content is designed to stop the scroll. We blend precision technology with creative intuition to produce visuals that are as smooth as they are striking. If it's Calistic, it's world-class.",
+                "Extraordinary content plans tailored for resonance. We create high-engagement UGC, reaction content, and cinematic narratives that stop the scroll. Every piece is engineered to fit into a larger organic strategy, ensuring your brand story resonates deeply across all digital platforms from day one.",
             position: "right",
         },
         {
             icon: <Building2 className="w-6 h-6" />,
             secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-yellow-400" />,
-            title: "3. Customized Campaigns",
+            title: "3. Pan-India Physical & Digital",
             description:
-                "Precision Strategy. Bespoke Execution. Your brand is unique; your strategy should be too. We reject the \"one-size-fits-all\" gravity of traditional marketing. Every campaign we build is a custom-engineered masterpiece, tailored specifically to your goals and your market. We design the trajectory; you enjoy the elevation.",
+                "From digital screens to physical presence. We manage everything from influencer campaigns and gigs to events and physical promotions. Our process involves thorough surveys and market analysis to understand exactly where to work and where to pull for maximum impact across India.",
             position: "left",
         },
     ]
@@ -156,17 +156,17 @@ export default function AboutUsSection() {
                         </motion.h2>
 
                         <motion.p
-                            className="text-white/90 text-xl md:text-2xl leading-snug font-light italic border-l-2 border-yellow-500/30 pl-6"
+                            className="text-white/90 text-xl md:text-2xl leading-tight font-light italic border-l-2 border-yellow-500 pl-6"
                             variants={itemVariants}
                         >
-                            &quot;We are India&apos;s premier influencer marketing agency, bridging the gap between brands and their audiences through authentic, engaging content and strategic influencer partnerships. <span className="text-yellow-400 font-normal">We serve Pan India.</span>&quot;
+                            &quot;We drive <span className="text-yellow-400 font-bold">Pure Organic Growth.</span> By deeply understanding your brand through R&D, we pinpoint exactly where to pull and what yields the highest ROI. <span className="text-yellow-400">Operating Pan India.</span>&quot;
                         </motion.p>
 
                         <motion.p
-                            className="text-white/40 text-sm md:text-base leading-relaxed font-extralight max-w-lg"
+                            className="text-white/60 text-base md:text-lg leading-relaxed font-light max-w-lg"
                             variants={itemVariants}
                         >
-                            Founded on the principle that every brand has a unique story to tell, we specialize in crafting customized campaigns that resonate with your target audience. Our team of creative professionals and marketing strategists work tirelessly to ensure your brand stands out in the digital landscape.
+                            We specialize in extraordinary content plans, UGC reactions, and organic influencer marketing. Our goal isn't just visibility; it's a movement. We don't rely on pushing ads—we build sustainable trajectories that grow further, naturally.
                         </motion.p>
 
                         <motion.div
@@ -201,13 +201,13 @@ export default function AboutUsSection() {
                             variants={itemVariants}
                         >
                             <motion.button
-                                className="group relative bg-white/5 hover:bg-white/10 border border-white/10 text-white px-10 py-4 rounded-full flex items-center gap-3 text-sm font-medium transition-all duration-300"
+                                className="group relative bg-yellow-500 hover:bg-yellow-400 text-black px-10 py-4 rounded-full flex items-center gap-3 text-sm font-bold transition-all duration-300 shadow-xl shadow-yellow-500/20"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
+                                onClick={() => document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })}
                             >
-                                Explore Portfolio
+                                Inquire Now
                                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                <div className="absolute inset-0 rounded-full border border-yellow-500/50 scale-105 opacity-0 group-hover:opacity-100 transition-opacity blur-[2px]" />
                             </motion.button>
                         </motion.div>
                     </motion.div>
@@ -224,17 +224,15 @@ export default function AboutUsSection() {
                             <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-yellow-500/20 via-transparent to-purple-500/20 blur-[10px]" />
 
                             <motion.div
-                                className="relative w-full h-full rounded-[2.5rem] border border-white/10 bg-[#030303]/90 backdrop-blur-2xl p-16 shadow-2xl flex items-center justify-center overflow-hidden"
-                                whileHover={{ scale: 1.02, rotate: 1 }}
+                                className="relative w-full h-full rounded-[2.5rem] bg-transparent backdrop-blur-sm p-4 flex items-center justify-center overflow-hidden"
+                                whileHover={{ scale: 1.02 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                             >
                                 <img
-                                    src="/calistic-logo.jpg"
+                                    src="/calistic-logo.png"
                                     alt="Calistic Media"
-                                    className="w-full h-full object-contain brightness-110 drop-shadow-[0_0_20px_rgba(16,185,129,0.2)]"
+                                    className="w-full h-full object-contain brightness-110 drop-shadow-[0_0_20px_rgba(250,204,21,0.2)]"
                                 />
-                                {/* Overlay gradient for depth */}
-                                <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
                             </motion.div>
 
                             {/* Floating Element */}
@@ -377,8 +375,14 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
 
     const displayValue = useTransform(springValue, (latest) => {
         const val = Math.floor(latest)
-        if (val >= 1000000) return (val / 1000000).toFixed(1) + 'M'
-        if (val >= 1000) return (val / 1000).toFixed(0) + 'K'
+        if (val >= 1000000) {
+            const m = val / 1000000
+            return (m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)) + 'M'
+        }
+        if (val >= 1000) {
+            const k = val / 1000
+            return (k % 1 === 0 ? k.toFixed(0) : k.toFixed(1)) + 'K'
+        }
         return val.toString()
     })
 

@@ -19,8 +19,13 @@ export function WhatsAppButton() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center"
+                className="group relative flex items-center gap-4"
             >
+                {/* Visual Label */}
+                <div className="absolute right-full mr-4 bg-[#121212] border border-white/10 px-4 py-2 rounded-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 shadow-2xl backdrop-blur-md">
+                    <span className="text-white text-sm font-medium">Connect with us on WhatsApp</span>
+                </div>
+
                 {/* Subtle outer glow instead of border */}
                 <div className="absolute inset-0 rounded-full bg-green-500/20 blur-xl group-hover:bg-green-500/40 transition-all duration-300 scale-150" />
 
