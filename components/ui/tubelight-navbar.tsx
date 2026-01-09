@@ -6,6 +6,8 @@ import Link from "next/link"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+import { usePathname } from "next/navigation"
+
 interface NavItem {
     name: string
     url: string
@@ -18,6 +20,7 @@ interface NavBarProps {
 }
 
 export function NavBar({ items, className }: NavBarProps) {
+    const pathname = usePathname()
     const [activeTab, setActiveTab] = useState(items[0].name)
     const [isMobile, setIsMobile] = useState(false)
 
@@ -30,6 +33,13 @@ export function NavBar({ items, className }: NavBarProps) {
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
+
+    useEffect(() => {
+        const currentItem = items.find(item => item.url === pathname)
+        if (currentItem) {
+            setActiveTab(currentItem.name)
+        }
+    }, [pathname, items])
 
     return (
         <div
@@ -76,8 +86,8 @@ export function NavBar({ items, className }: NavBarProps) {
                                     initial={false}
                                     transition={{
                                         type: "spring",
-                                        stiffness: 400,
-                                        damping: 35,
+                                        stiffness: 300,
+                                        damping: 30,
                                     }}
                                 >
                                     <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-6 md:w-8 h-[1px] md:h-[2px] bg-yellow-400 rounded-full">

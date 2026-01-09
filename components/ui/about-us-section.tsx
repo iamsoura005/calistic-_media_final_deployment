@@ -224,13 +224,7 @@ export default function AboutUsSection({
                             </motion.div>
 
                             {/* Floating Element */}
-                            <motion.div
-                                className="absolute -top-6 -right-6 w-20 h-20 flex items-center justify-center text-yellow-400"
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                <Sparkles className="w-8 h-8" />
-                            </motion.div>
+
                         </div>
                     </motion.div>
                 </div>

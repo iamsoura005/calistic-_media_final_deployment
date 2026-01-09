@@ -52,7 +52,7 @@ export function Navbar() {
                         </a>
                     ))}
                     <div className="flex items-center gap-3">
-                        <a href="https://wa.me/917439167389?text=I'm%20interested%20in%20a%20Free%20Consultation" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/918240721057?text=I'm%20interested%20in%20a%20Free%20Consultation" target="_blank" rel="noopener noreferrer">
                             <motion.button
                                 className="border border-yellow-500/50 hover:bg-yellow-500/10 text-yellow-500 px-5 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all duration-300 min-h-[44px]"
                                 whileHover={{ scale: 1.05 }}
@@ -99,7 +99,7 @@ export function Navbar() {
                                 {link.name}
                             </a>
                         ))}
-                        <a href="https://wa.me/917439167389?text=I'm%20interested%20in%20a%20Free%20Consultation" target="_blank" rel="noopener noreferrer" className="w-full">
+                        <a href="https://wa.me/918240721057?text=I'm%20interested%20in%20a%20Free%20Consultation" target="_blank" rel="noopener noreferrer" className="w-full">
                             <button className="w-full border border-yellow-500 text-yellow-500 px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 min-h-[44px]">
                                 FREE CONSULTATION
                             </button>

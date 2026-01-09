@@ -60,7 +60,7 @@ export default function LandingPage() {
         setShowPopup(true);
       }, 2000);
       return () => clearTimeout(popupTimer);
-    }, 3000);
+    }, 2000);
     return () => clearTimeout(loaderTimer);
   }, []);
 

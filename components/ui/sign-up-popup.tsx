@@ -39,7 +39,7 @@ export function SignUpPopup({ isOpen, onClose }: SignUpPopupProps) {
                         initial={{ scale: 0.5, opacity: 0, y: 0 }}
                         animate={{ scale: 1, opacity: 1, y: 0 }}
                         exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                        transition={{ type: "spring", damping: 15, stiffness: 300 }}
+                        transition={{ type: "spring", damping: 25, stiffness: 300 }}
                     >
                         {/* Decorative background glow */}
                         <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-yellow-500/10 blur-3xl" />
