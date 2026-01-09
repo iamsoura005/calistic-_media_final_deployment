@@ -9,6 +9,7 @@ import {
     Send,
     Instagram,
 } from 'lucide-react'
+import { SocialIcons } from './social-icons'
 
 const links = [
     { title: 'Home', href: '/' },
@@ -17,10 +18,6 @@ const links = [
     { title: 'Contact', href: '/contact' },
 ]
 
-const socials = [
-    { icon: Instagram, href: 'https://www.instagram.com/calisticmedia?igsh=NTEydzg4NmN6dnM2', label: 'Instagram' },
-    { icon: MessageCircle, href: 'https://wa.me/918240721057', label: 'WhatsApp' },
-]
 
 export default function FooterSection() {
     return (
@@ -47,18 +44,8 @@ export default function FooterSection() {
                         ))}
                     </div>
 
-                    <div className="flex flex-wrap justify-center gap-8">
-                        {socials.map((social, idx) => (
-                            <Link
-                                key={idx}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={social.label}
-                                className="text-white/20 hover:text-yellow-500 transition-all duration-300 transform hover:scale-110">
-                                <social.icon className="size-5" strokeWidth={1.5} />
-                            </Link>
-                        ))}
+                    <div className="flex justify-center">
+                        <SocialIcons />
                     </div>
 
                     <span className="text-white/20 text-[10px] uppercase tracking-[0.3em] text-center w-full pt-12">

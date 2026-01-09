@@ -75,7 +75,7 @@ export default function ServicesPage() {
                         <span className="text-yellow-400 italic">Impact.</span>
                     </motion.h1>
                     <motion.p
-                        className="text-white/50 text-xl font-light max-w-2xl leading-relaxed"
+                        className="text-white/50 text-xl font-light max-w-2xl leading-relaxed text-center mx-auto"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
