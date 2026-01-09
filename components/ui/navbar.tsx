@@ -91,9 +91,11 @@ export function Navbar() {
                                 {link.name}
                             </a>
                         ))}
-                        <button className="bg-yellow-500 text-[#030303] px-8 py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
-                            START A PROJECT <ArrowRight className="w-4 h-4" />
-                        </button>
+                        <a href="/signin" className="w-full">
+                            <button className="w-full bg-yellow-500 text-[#030303] px-8 py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
+                                GET STARTED <ArrowRight className="w-4 h-4" />
+                            </button>
+                        </a>
                     </motion.div>
                 )}
             </AnimatePresence>

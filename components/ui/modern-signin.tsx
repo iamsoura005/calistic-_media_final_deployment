@@ -4,11 +4,10 @@ import * as React from 'react'
 import { useState } from 'react'
 import Image from 'next/image'
 
-interface InputProps {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string
     placeholder?: string
     icon?: React.ReactNode
-    [key: string]: any
 }
 
 const AppInput = (props: InputProps) => {
@@ -165,7 +164,8 @@ export const ModernSignIn = ({ onSignIn }: ModernSignInProps) => {
                                     {isSignUp ? 'or use your email for registration' : 'or use your account'}
                                 </span>
                             </div>
-                            <div className='grid gap-4 items-center'>
+                            <div className='grid gap-4 items-center text-left'>
+                                {isSignUp && <AppInput placeholder="Full Name" type="text" />}
                                 <AppInput placeholder="Email" type="email" />
                                 <AppInput placeholder="Password" type="password" />
                             </div>
