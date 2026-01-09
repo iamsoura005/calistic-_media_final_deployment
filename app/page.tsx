@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import AboutUsSection from "@/components/ui/about-us-section";
 import { Navbar } from "@/components/ui/navbar";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
+import { GooeyLoader } from "@/components/ui/loader-10";
 import { SignUpPopup } from "@/components/ui/sign-up-popup";
 
 export default function Home() {
