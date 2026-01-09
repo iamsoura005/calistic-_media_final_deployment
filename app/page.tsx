@@ -4,17 +4,22 @@ import React, { useState, useEffect } from "react";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import AboutUsSection from "@/components/ui/about-us-section";
 import { Navbar } from "@/components/ui/navbar";
-import { WhatsAppButton } from "@/components/ui/whatsapp-button";
-import { GooeyLoader } from "@/components/ui/loader-10";
+import { SignUpPopup } from "@/components/ui/sign-up-popup";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const loaderTimer = setTimeout(() => {
       setIsLoading(false);
+      // Trigger popup 5 seconds after loading finishes
+      const popupTimer = setTimeout(() => {
+        setShowPopup(true);
+      }, 5000);
+      return () => clearTimeout(popupTimer);
     }, 3000);
-    return () => clearTimeout(timer);
+    return () => clearTimeout(loaderTimer);
   }, []);
 
   if (isLoading) {
@@ -35,6 +40,7 @@ export default function Home() {
       />
       <AboutUsSection />
       <WhatsAppButton />
+      <SignUpPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
     </main>
   );
 }

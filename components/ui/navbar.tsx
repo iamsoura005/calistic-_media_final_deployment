@@ -30,7 +30,7 @@ export function Navbar() {
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}

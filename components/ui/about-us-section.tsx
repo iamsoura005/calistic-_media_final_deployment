@@ -42,8 +42,8 @@ export default function AboutUsSection() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3,
+                staggerChildren: 0.1,
+                delayChildren: 0.1,
             },
         },
     }
@@ -53,7 +53,7 @@ export default function AboutUsSection() {
         visible: {
             y: 0,
             opacity: 1,
-            transition: { duration: 0.6 },
+            transition: { duration: 0.4 },
         },
     }
 
