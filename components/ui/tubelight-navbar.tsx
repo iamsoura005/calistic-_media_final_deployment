@@ -17,9 +17,10 @@ interface NavItem {
 interface NavBarProps {
     items: NavItem[]
     className?: string
+    onSignupClick?: () => void
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items, className, onSignupClick }: NavBarProps) {
     const pathname = usePathname()
     const [activeTab, setActiveTab] = useState(items[0].name)
     const [isMobile, setIsMobile] = useState(false)
@@ -98,6 +99,15 @@ export function NavBar({ items, className }: NavBarProps) {
                         </Link>
                     )
                 })}
+            </div>
+
+            <div className="pointer-events-auto">
+                <button
+                    onClick={onSignupClick}
+                    className="px-6 py-2 bg-yellow-500 hover:bg-yellow-400 text-black text-sm font-semibold rounded-full shadow-lg shadow-yellow-500/20 transition-all duration-300 hover:shadow-yellow-500/40 hover:scale-105 active:scale-95"
+                >
+                    SIGN UP
+                </button>
             </div>
         </div>
     )

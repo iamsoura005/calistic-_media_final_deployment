@@ -12,12 +12,22 @@ interface SignUpPopupProps {
 export function SignUpPopup({ isOpen, onClose }: SignUpPopupProps) {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [isSubmitted, setIsSubmitted] = useState(false)
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         // Handle form submission logic here
-        console.log("Submitted:", { name, email })
-        onClose()
+        console.log("Submitted:", { name, email, phone })
+        setIsSubmitted(true)
+        setTimeout(() => {
+            onClose()
+            setIsSubmitted(false)
+            // Reset form
+            setName("")
+            setEmail("")
+            setPhone("")
+        }, 3000)
     }
 
     return (
@@ -51,57 +61,79 @@ export function SignUpPopup({ isOpen, onClose }: SignUpPopupProps) {
                             <X className="h-5 w-5" />
                         </button>
 
-                        <div className="relative space-y-6">
-                            <div className="flex flex-col items-center text-center space-y-2">
-                                <div className="p-3 bg-yellow-500/10 rounded-2xl text-yellow-500 mb-2">
-                                    <Sparkles className="h-6 w-6" />
+                        {isSubmitted ? (
+                            <div className="flex flex-col items-center justify-center text-center py-10 space-y-4">
+                                <div className="p-4 bg-yellow-500/20 rounded-full text-yellow-500 mb-2">
+                                    <Sparkles className="h-8 w-8" />
                                 </div>
-                                <h3 className="text-2xl font-light text-white tracking-tight">
-                                    Scale Your <span className="text-yellow-400 font-medium italic">Brand</span>
+                                <h3 className="text-2xl font-bold text-white">
+                                    Thanks for connecting!
                                 </h3>
-                                <p className="text-sm text-white/50 max-w-[280px]">
-                                    Join India&apos;s leading marketing network and start growing today.
+                                <p className="text-white/60">
+                                    We'll get back to you shortly.
                                 </p>
                             </div>
-
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div className="space-y-1">
-                                    <input
-                                        type="text"
-                                        placeholder="Your Name"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
-                                        required
-                                    />
-                                </div>
-                                <div className="space-y-1">
-                                    <input
-                                        type="email"
-                                        placeholder="Professional Email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
-                                        required
-                                    />
+                        ) : (
+                            <div className="relative space-y-6">
+                                <div className="flex flex-col items-center text-center space-y-2">
+                                    <div className="p-3 bg-yellow-500/10 rounded-2xl text-yellow-500 mb-2">
+                                        <Sparkles className="h-6 w-6" />
+                                    </div>
+                                    <h3 className="text-2xl font-light text-white tracking-tight">
+                                        Scale Your <span className="text-yellow-400 font-medium italic">Brand</span>
+                                    </h3>
+                                    <p className="text-sm text-white/50 max-w-[280px]">
+                                        Join India&apos;s leading marketing network and start growing today.
+                                    </p>
                                 </div>
 
-                                <a href="/signin" className="w-full">
+                                <form onSubmit={handleSubmit} className="space-y-4">
+                                    <div className="space-y-1">
+                                        <input
+                                            type="text"
+                                            placeholder="Your Name"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <input
+                                            type="email"
+                                            placeholder="Professional Email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <input
+                                            type="tel"
+                                            placeholder="Phone Number"
+                                            value={phone}
+                                            onChange={(e) => setPhone(e.target.value)}
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
+                                            required
+                                        />
+                                    </div>
+
                                     <motion.button
-                                        type="button"
+                                        type="submit"
                                         className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-xl font-semibold flex items-center justify-center gap-2 mt-6 shadow-lg shadow-yellow-500/20"
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                     >
                                         GET STARTED <ArrowRight className="h-4 w-4" />
                                     </motion.button>
-                                </a>
-                            </form>
+                                </form>
 
-                            <p className="text-[10px] text-center text-white/20 uppercase tracking-[0.2em]">
-                                No spam. Only World-Class growth.
-                            </p>
-                        </div>
+                                <p className="text-[10px] text-center text-white/20 uppercase tracking-[0.2em]">
+                                    No spam. Only World-Class growth.
+                                </p>
+                            </div>
+                        )}
                     </motion.div>
                 </div>
             )}

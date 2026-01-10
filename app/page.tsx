@@ -12,6 +12,7 @@ import { GooeyLoader } from "@/components/ui/loader-10";
 import { SignUpPopup } from "@/components/ui/sign-up-popup";
 import AboutUsSection from "@/components/ui/about-us-section";
 import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee";
+import { Logos3 } from "@/components/ui/logos3";
 
 const testimonials = [
   {
@@ -58,7 +59,7 @@ export default function LandingPage() {
       // Trigger popup 2 seconds after loading finishes
       const popupTimer = setTimeout(() => {
         setShowPopup(true);
-      }, 2000);
+      }, 10000);
       return () => clearTimeout(popupTimer);
     }, 2000);
     return () => clearTimeout(loaderTimer);
@@ -81,7 +82,7 @@ export default function LandingPage() {
 
   return (
     <main className="w-full bg-[#030303] overflow-x-hidden scroll-smooth">
-      <NavBar items={navItems} />
+      <NavBar items={navItems} onSignupClick={() => setShowPopup(true)} />
 
       <HeroGeometric
         badge="Pure Organic Growth"
@@ -94,6 +95,8 @@ export default function LandingPage() {
       </section>
 
       <AboutUsSection />
+
+      <Logos3 />
 
       <TestimonialsSection
         title="Trusted by India's biggest brands and creators"
