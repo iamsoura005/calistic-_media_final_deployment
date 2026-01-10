@@ -13,6 +13,7 @@ import { SignUpPopup } from "@/components/ui/sign-up-popup";
 import AboutUsSection from "@/components/ui/about-us-section";
 import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee";
 import { Logos3 } from "@/components/ui/logos3";
+import { InstagramReels } from "@/components/ui/instagram-reels";
 
 const testimonials = [
   {
@@ -97,6 +98,8 @@ export default function LandingPage() {
       <AboutUsSection />
 
       <Logos3 />
+
+      <InstagramReels />
 
       <TestimonialsSection
         title="Trusted by India's biggest brands and creators"

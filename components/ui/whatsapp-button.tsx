@@ -22,8 +22,8 @@ export function WhatsAppButton() {
                 className="group relative flex items-center gap-4"
             >
                 {/* Visual Label */}
-                <div className="absolute right-full mr-4 bg-[#121212] border border-white/10 px-4 py-2 rounded-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 shadow-2xl backdrop-blur-md">
-                    <span className="text-white text-sm font-medium">Get Instant Consultation</span>
+                <div className="absolute right-full mr-4 bg-[#121212] border border-white/10 px-4 py-2 rounded-xl whitespace-nowrap opacity-100 transition-all duration-300 shadow-2xl backdrop-blur-md">
+                    <span className="text-white text-sm font-medium">Chat with us</span>
                 </div>
 
                 {/* Subtle outer glow instead of border */}

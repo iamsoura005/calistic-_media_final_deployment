@@ -76,7 +76,7 @@ const Logos3 = ({
         },
         {
             id: "logo-8",
-            description: "Royal cruise",
+            description: "Royal Cruiser",
             image: "/logos/royal_cruise.jpg",
             className: "h-20 w-auto object-contain",
             href: "https://www.instagram.com/theroyalcruiser?igsh=MWY3MGE5MGNzYXplcw==",
@@ -105,7 +105,7 @@ const Logos3 = ({
         {
             id: "logo-12",
             description: "Swiggy",
-            image: "/logos/swiggy.jpeg",
+            image: "/logos/swiggy.png",
             className: "h-20 w-auto object-contain",
             href: "https://www.instagram.com/reel/DPOB-_CD9Q-/?igsh=bzBmYzgyaDBpbTNt",
         },
@@ -113,8 +113,9 @@ const Logos3 = ({
 }: Logos3Props) => {
     return (
         <section className="py-24 bg-[#030303] text-white">
+            <div className="w-full h-px bg-linear-to-r from-transparent via-yellow-500/20 to-transparent" />
             <div className="container flex flex-col items-center text-center">
-                <h1 className="my-6 text-2xl font-bold text-pretty lg:text-4xl text-white">
+                <h1 className="my-8 text-2xl font-bold text-pretty lg:text-4xl text-white">
                     {heading}
                 </h1>
             </div>
@@ -122,25 +123,25 @@ const Logos3 = ({
                 <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
                     <Carousel
                         opts={{ loop: true }}
-                        plugins={[AutoScroll({ playOnInit: true })]}
+                        plugins={[AutoScroll({ playOnInit: true, speed: 1.5, stopOnInteraction: false })]}
                     >
-                        <CarouselContent className="ml-0">
+                        <CarouselContent className="-ml-2 md:-ml-4">
                             {logos.map((logo) => (
                                 <CarouselItem
                                     key={logo.id}
-                                    className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                                    className="flex basis-1/4 justify-center pl-2 sm:basis-1/5 md:basis-1/6 lg:basis-1/6 md:pl-4"
                                 >
-                                    <div className="mx-10 flex flex-col items-center gap-3">
+                                    <div className="mx-2 flex flex-col items-center gap-3 w-full">
                                         <a
                                             href={logo.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex shrink-0 items-center justify-center bg-white/5 p-4 rounded-lg w-full transition-transform hover:scale-105 active:scale-95"
+                                            className="flex shrink-0 items-center justify-center bg-white/5 p-4 rounded-lg w-full h-32 transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] active:scale-95"
                                         >
                                             <img
                                                 src={logo.image}
                                                 alt={logo.description}
-                                                className={logo.className}
+                                                className="h-full w-full object-contain"
                                             />
                                         </a>
                                         <span className="text-sm text-white/70 font-medium text-center">
@@ -153,6 +154,7 @@ const Logos3 = ({
                     </Carousel>
                 </div>
             </div>
+            <div className="w-full h-px bg-linear-to-r from-transparent via-yellow-500/20 to-transparent mt-10 md:mt-20" />
         </section>
     );
 };
