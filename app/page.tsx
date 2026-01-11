@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { Home as HomeIcon, Sparkles, Layout, MessageSquare, MapPin } from "lucide-react";
+import HeroGeometric from "@/components/ui/shape-landing-hero";
 import { NavBar } from "@/components/ui/tubelight-navbar";
+import { FeaturesSectionWithCardGradient } from "@/components/ui/feature-section-with-card-gradient";
 import { LocationMap } from "@/components/ui/expand-map";
 import FooterSection from "@/components/ui/footer";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
@@ -12,8 +14,6 @@ import AboutUsSection from "@/components/ui/about-us-section";
 import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee";
 import { Logos3 } from "@/components/ui/logos3";
 import { InstagramReels } from "@/components/ui/instagram-reels";
-import { HeroCinematic } from "@/components/ui/hero-cinematic";
-import { BentoServices } from "@/components/ui/bento-services";
 
 const testimonials = [
   {
@@ -82,38 +82,34 @@ export default function LandingPage() {
   }
 
   return (
-    <main className="w-full bg-[#0a0a0a] overflow-x-hidden scroll-smooth text-white pb-20 md:pb-0">
+    <main className="w-full bg-[#030303] overflow-x-hidden scroll-smooth">
       <NavBar items={navItems} onSignupClick={() => setShowPopup(true)} />
 
-      {/* Cinematic Hero Section */}
-      <HeroCinematic />
+      <HeroGeometric
+        badge="Pure Organic Growth"
+        title1="Calistic"
+        title2="Media"
+      />
 
-      {/* Trust Bar (below Hero) */}
-      <Logos3 heading="Trusted By Industry Leaders" />
+      <section id="features">
+        <FeaturesSectionWithCardGradient />
+      </section>
 
-      {/* Bento Grid Services */}
-      <div id="services">
-        <BentoServices />
-      </div>
-
-      {/* About Section - Kept for content completeness */}
       <AboutUsSection />
 
-      {/* Testimonials - Social Proof */}
+      <Logos3 />
+
+      <InstagramReels />
+
       <TestimonialsSection
         title="Trusted by India's biggest brands and creators"
         description="Join the 50,000+ creators and hundreds of brands building high-fidelity organic growth with Calistic Media."
         testimonials={testimonials}
       />
 
-      {/* Instagram Reels - Lazy Loaded Visuals */}
-      <div className="opacity-90">
-        <InstagramReels />
-      </div>
-
-      <section className="py-24 bg-[#0a0a0a] flex justify-center px-6 border-t border-white/5">
+      <section className="py-24 bg-[#030303] flex justify-center px-6">
         <div className="flex flex-col items-center gap-8">
-          <span className="text-blue-500/40 text-[10px] uppercase tracking-[0.4em] font-medium">Global Network</span>
+          <span className="text-yellow-500/40 text-[10px] uppercase tracking-[0.4em] font-medium">Global Network</span>
           <LocationMap location="India Network" coordinates="20.5937° N, 78.9629° E" />
         </div>
       </section>
