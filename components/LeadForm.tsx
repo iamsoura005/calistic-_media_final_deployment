@@ -30,11 +30,16 @@ export default function LeadForm() {
         setStatus('Sending...');
 
         try {
-            // We use 'no-cors' mode because Google Apps Script doesn't support standard CORS headers.
-            // The data will still reach the sheet, but we won't get a standard JSON response back.
+            // Use FormData for better compatibility with Google Apps Script
+            const formPayload = new FormData();
+            formPayload.append('firstName', formData.firstName);
+            formPayload.append('lastName', formData.lastName);
+            formPayload.append('mobile', formData.mobile);
+            formPayload.append('email', formData.email);
+
             await fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
-                body: JSON.stringify(formData),
+                body: formPayload,
                 mode: "no-cors"
             });
 
