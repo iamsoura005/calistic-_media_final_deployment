@@ -6,7 +6,6 @@ import { LocationMap } from "@/components/ui/expand-map"
 import { NavBar } from "@/components/ui/tubelight-navbar"
 import FooterSection from "@/components/ui/footer"
 import { Phone, Instagram, Linkedin, ArrowRight, MapPin } from "lucide-react"
-import LeadForm from "@/components/LeadForm"
 
 export default function ContactPage() {
     const navItems = [
@@ -144,9 +143,29 @@ export default function ContactPage() {
                                 </motion.a>
                             ))}
 
-                            <div className="mt-8">
-                                <LeadForm />
-                            </div>
+                            <motion.div
+                                className="mt-8 p-10 rounded-[2.5rem] bg-gradient-to-br from-yellow-500/10 via-transparent to-transparent border border-yellow-500/20 relative overflow-hidden"
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.8 }}
+                            >
+                                <div className="relative z-10">
+                                    <h3 className="text-2xl font-light mb-4 flex items-center gap-3">
+                                        <MessageSquare className="text-yellow-400 w-6 h-6" />
+                                        Direct Enquiry
+                                    </h3>
+                                    <p className="text-white/50 font-light mb-8 text-sm leading-relaxed">
+                                        Our strategy team responds within 2 hours. Start your trajectory today.
+                                    </p>
+                                    <button
+                                        className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-xl shadow-yellow-500/20 min-h-[48px]"
+                                        onClick={() => window.open(`https://wa.me/918240721057?text=I'd%20like%20to%20enquire%20about%20Calistic%20Media%20services`, "_blank")}
+                                    >
+                                        Inquire via WhatsApp <ArrowRight className="w-4 h-4" />
+                                    </button>
+                                </div>
+                                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-yellow-500/10 blur-3xl rounded-full" />
+                            </motion.div>
                         </div>
                     </div>
                 </div>

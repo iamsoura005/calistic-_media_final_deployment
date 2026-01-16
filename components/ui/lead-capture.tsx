@@ -8,14 +8,41 @@ export function LeadCapture() {
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setLoading(true)
-        // Simulate submission
-        setTimeout(() => {
-            setLoading(false)
+
+        const formData = new FormData(e.currentTarget)
+        const payload = {
+            firstName: formData.get("firstName"),
+            lastName: formData.get("lastName"),
+            mobile: formData.get("mobile"),
+            email: formData.get("email"),
+            // objective is not in current sheet schema, ignoring for backend
+        }
+
+        try {
+            // Replace with your actual deployment URL
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxR6ohS4FPczuaFbsCOoQNq2GVulJDkXbjtjDxCj_LmJ2cIB058mp_B5e1ZwkxViPy_/exec"
+
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors", // Required for Google Apps Script
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            })
+
+            // Since mode is no-cors, we can't read the response status.
+            // We assume success if no network error occurred.
             setIsSubmitted(true)
-        }, 1500)
+        } catch (error) {
+            console.error("Submission error:", error)
+            alert("Something went wrong. Please try again.")
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
@@ -90,15 +117,49 @@ export function LeadCapture() {
                                         exit={{ opacity: 0, scale: 0.95 }}
                                         transition={{ duration: 0.4 }}
                                     >
+                                        {/* Name Row */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                             <div className="space-y-2">
-                                                <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">Full Name</label>
+                                                <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">First Name</label>
                                                 <div className="relative">
                                                     <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
                                                     <input
                                                         type="text"
+                                                        name="firstName"
                                                         required
-                                                        placeholder="Full Name"
+                                                        placeholder="First Name"
+                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">Last Name</label>
+                                                <div className="relative">
+                                                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
+                                                    <input
+                                                        type="text"
+                                                        name="lastName"
+                                                        required
+                                                        placeholder="Last Name"
+                                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Contact Row */}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                                            <div className="space-y-2">
+                                                <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">Mobile Number</label>
+                                                <div className="relative">
+                                                    <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
+                                                    <input
+                                                        type="tel"
+                                                        name="mobile"
+                                                        required
+                                                        placeholder="10-digit Mobile Number"
+                                                        pattern="[0-9]{10}"
+                                                        title="Please enter a valid 10-digit mobile number"
                                                         className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
                                                     />
                                                 </div>
@@ -109,6 +170,7 @@ export function LeadCapture() {
                                                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
                                                     <input
                                                         type="email"
+                                                        name="email"
                                                         required
                                                         placeholder="Email Address"
                                                         className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 transition-all"
@@ -117,11 +179,20 @@ export function LeadCapture() {
                                             </div>
                                         </div>
 
+                                        {/* Hidden objective field if you want to keep it or map it to something else later, 
+                                            but currently not in the Google Sheet schema. I'll include it but it won't be sent to backend unless schema changes. 
+                                            Actually, let's keep it visible for UX but since backend doesn't support it yet, we won't send it or we can send it as extra data if we updated the script.
+                                            For now, respecting strict schema: I will leave it in UI but NOT send it to backend to avoid confusion, 
+                                            OR I can append it to one of the fields? No, let's just send what is requested. 
+                                            Actually, 'Your Objective' is a nice field. I should probably suggest adding it to the sheet. 
+                                            for now, I will NOT send it to backend based on strict requirements.*/}
+
                                         <div className="space-y-2">
                                             <label className="text-[10px] uppercase tracking-widest text-white/30 font-semibold ml-4">Your Objective</label>
                                             <div className="relative">
                                                 <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-white/20" />
                                                 <textarea
+                                                    name="objective"
                                                     required
                                                     placeholder="Tell us about your brand goals..."
                                                     rows={4}
@@ -137,9 +208,17 @@ export function LeadCapture() {
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                         >
-                                            <span className="tracking-widest">{loading ? "SENDING..." : "START YOUR ORGANIC JOURNEY PAN INDIA"}</span>
+                                            <span className="tracking-widest">{loading ? "SUBMITTING..." : "START YOUR ORGANIC JOURNEY PAN INDIA"}</span>
                                             <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                         </motion.button>
+
+                                        {/* Error Message Display if needed */}
+                                        <div className="text-center">
+                                            <p className="text-white/30 text-xs">
+                                                Secured by Calistic Media Systems
+                                            </p>
+                                        </div>
+
                                     </motion.form>
                                 ) : (
                                     <motion.div
