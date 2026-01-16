@@ -1,8 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, ArrowRight, Sparkles } from "lucide-react"
+import { X, ArrowRight, Sparkles, Loader2 } from "lucide-react"
+
+// Google Apps Script Web App URL
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqyAg-opc-CvBjWR65FQtdbdyV1DqMNCwhDYW2OesWWD0gv2PVHQqZByM5F5Vv_Sqf/exec"
 
 interface SignUpPopupProps {
     isOpen: boolean
@@ -10,24 +13,58 @@ interface SignUpPopupProps {
 }
 
 export function SignUpPopup({ isOpen, onClose }: SignUpPopupProps) {
-    const [name, setName] = useState("")
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
+    const [error, setError] = useState<string | null>(null)
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // Handle form submission logic here
-        console.log("Submitted:", { name, email, phone })
-        setIsSubmitted(true)
-        setTimeout(() => {
-            onClose()
-            setIsSubmitted(false)
-            // Reset form
-            setName("")
-            setEmail("")
-            setPhone("")
-        }, 3000)
+        setError(null)
+        setIsLoading(true)
+
+        try {
+            // Prepare the payload matching the backend schema
+            const payload = {
+                firstName: firstName.trim(),
+                lastName: lastName.trim(),
+                mobile: phone.trim(),
+                email: email.trim()
+            }
+
+            // Send POST request to Google Apps Script
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors", // Required for Google Apps Script
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+
+            // With no-cors mode, we can't read the response
+            // but if fetch didn't throw, the request was sent successfully
+            console.log("Lead submitted successfully:", payload)
+
+            setIsSubmitted(true)
+            setTimeout(() => {
+                onClose()
+                setIsSubmitted(false)
+                // Reset form
+                setFirstName("")
+                setLastName("")
+                setEmail("")
+                setPhone("")
+            }, 3000)
+        } catch (err) {
+            console.error("Error submitting form:", err)
+            setError("Something went wrong. Please try again.")
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     return (
@@ -88,14 +125,32 @@ export function SignUpPopup({ isOpen, onClose }: SignUpPopupProps) {
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-4">
-                                    <div className="space-y-1">
+                                    {/* Error message display */}
+                                    {error && (
+                                        <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm text-center">
+                                            {error}
+                                        </div>
+                                    )}
+
+                                    {/* First Name & Last Name side by side */}
+                                    <div className="grid grid-cols-2 gap-3">
                                         <input
                                             type="text"
-                                            placeholder="Your Name"
-                                            value={name}
-                                            onChange={(e) => setName(e.target.value)}
+                                            placeholder="First Name"
+                                            value={firstName}
+                                            onChange={(e) => setFirstName(e.target.value)}
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
                                             required
+                                            disabled={isLoading}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="Last Name"
+                                            value={lastName}
+                                            onChange={(e) => setLastName(e.target.value)}
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
+                                            required
+                                            disabled={isLoading}
                                         />
                                     </div>
                                     <div className="space-y-1">
@@ -106,26 +161,40 @@ export function SignUpPopup({ isOpen, onClose }: SignUpPopupProps) {
                                             onChange={(e) => setEmail(e.target.value)}
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
                                             required
+                                            disabled={isLoading}
                                         />
                                     </div>
                                     <div className="space-y-1">
                                         <input
                                             type="tel"
-                                            placeholder="Phone Number"
+                                            placeholder="Phone Number (10 digits)"
                                             value={phone}
                                             onChange={(e) => setPhone(e.target.value)}
+                                            pattern="[0-9]{10}"
+                                            title="Please enter a 10-digit phone number"
                                             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 transition-colors"
                                             required
+                                            disabled={isLoading}
                                         />
                                     </div>
 
                                     <motion.button
                                         type="submit"
-                                        className="w-full bg-yellow-500 hover:bg-yellow-400 text-[#030303] py-4 rounded-xl font-semibold flex items-center justify-center gap-2 mt-6 shadow-lg shadow-yellow-500/20"
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
+                                        disabled={isLoading}
+                                        className="w-full bg-yellow-500 hover:bg-yellow-400 disabled:bg-yellow-500/50 disabled:cursor-not-allowed text-[#030303] py-4 rounded-xl font-semibold flex items-center justify-center gap-2 mt-6 shadow-lg shadow-yellow-500/20 transition-colors"
+                                        whileHover={!isLoading ? { scale: 1.02 } : {}}
+                                        whileTap={!isLoading ? { scale: 0.98 } : {}}
                                     >
-                                        GET STARTED <ArrowRight className="h-4 w-4" />
+                                        {isLoading ? (
+                                            <>
+                                                <Loader2 className="h-4 w-4 animate-spin" />
+                                                SUBMITTING...
+                                            </>
+                                        ) : (
+                                            <>
+                                                GET STARTED <ArrowRight className="h-4 w-4" />
+                                            </>
+                                        )}
                                     </motion.button>
                                 </form>
 
