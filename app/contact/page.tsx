@@ -1,10 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Home, Sparkles, Layout, MessageSquare, MapPin } from "lucide-react"
+import { Home, Sparkles, Layout, MessageSquare } from "lucide-react"
+import { LocationMap } from "@/components/ui/expand-map"
 import { NavBar } from "@/components/ui/tubelight-navbar"
 import FooterSection from "@/components/ui/footer"
-import { Mail, Phone, Instagram, Linkedin, Facebook, Twitter, ArrowRight } from "lucide-react"
+import { Phone, Instagram, Linkedin, ArrowRight, MapPin } from "lucide-react"
 
 export default function ContactPage() {
     const navItems = [
@@ -24,12 +25,12 @@ export default function ContactPage() {
             bg: "bg-blue-500/10"
         },
         {
-            icon: <Mail className="w-6 h-6" />,
-            label: "Email Us",
-            value: "calisticproduction@gmail.com",
-            href: "mailto:calisticproduction@gmail.com",
-            color: "text-yellow-400",
-            bg: "bg-yellow-500/10"
+            icon: <MessageSquare className="w-6 h-6" />,
+            label: "WhatsApp / SMS",
+            value: "+91 8240721057",
+            href: "https://wa.me/918240721057",
+            color: "text-green-400",
+            bg: "bg-green-500/10"
         },
         {
             icon: <MapPin className="w-6 h-6" />,
@@ -43,9 +44,7 @@ export default function ContactPage() {
 
     const socials = [
         { icon: <Instagram />, label: "Instagram", href: "https://www.instagram.com/calisticmedia?igsh=NTEydzg4NmN6dnM2" },
-        { icon: <Linkedin />, label: "LinkedIn", href: "#" },
-        { icon: <Facebook />, label: "Facebook", href: "#" },
-        { icon: <Twitter />, label: "Twitter", href: "#" }
+        { icon: <Linkedin />, label: "LinkedIn", href: "https://www.linkedin.com/company/calistic-production/" }
     ]
 
     return (
@@ -170,10 +169,18 @@ export default function ContactPage() {
                         </div>
                     </div>
                 </div>
+
+            </section>
+
+            <section className="py-24 bg-[#030303] flex justify-center px-6">
+                <div className="flex flex-col items-center gap-8">
+                    <span className="text-yellow-500/40 text-[10px] uppercase tracking-[0.4em] font-medium">Global Network</span>
+                    <LocationMap location="India Network" coordinates="20.5937° N, 78.9629° E" />
+                </div>
             </section>
 
             <FooterSection />
-        </main>
+        </main >
     )
 }
 

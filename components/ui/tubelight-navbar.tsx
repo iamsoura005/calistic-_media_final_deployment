@@ -45,7 +45,7 @@ export function NavBar({ items, className, onSignupClick }: NavBarProps) {
     return (
         <div
             className={cn(
-                "fixed top-0 left-0 right-0 z-[1000] p-4 md:p-6 flex items-center justify-between pointer-events-none",
+                "fixed top-0 left-0 right-0 z-[1000] p-3 md:p-6 flex items-center justify-between pointer-events-none",
                 className,
             )}
         >
@@ -104,7 +104,7 @@ export function NavBar({ items, className, onSignupClick }: NavBarProps) {
             <div className="pointer-events-auto">
                 <button
                     onClick={onSignupClick}
-                    className="px-6 py-2 bg-yellow-500 hover:bg-yellow-400 text-black text-sm font-semibold rounded-full shadow-lg shadow-yellow-500/20 transition-all duration-300 hover:shadow-yellow-500/40 hover:scale-105 active:scale-95"
+                    className="px-4 py-1.5 md:px-6 md:py-2 bg-yellow-500 hover:bg-yellow-400 text-black text-[10px] md:text-sm font-semibold rounded-full shadow-lg shadow-yellow-500/20 transition-all duration-300 hover:shadow-yellow-500/40 hover:scale-105 active:scale-95"
                 >
                     SIGN UP
                 </button>

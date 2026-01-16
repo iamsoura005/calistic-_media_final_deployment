@@ -1,54 +1,18 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Home as HomeIcon, Sparkles, Layout, MessageSquare, MapPin } from "lucide-react";
+import { Home, Sparkles, Layout, MessageSquare } from "lucide-react";
 import HeroGeometric from "@/components/ui/shape-landing-hero";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { FeaturesSectionWithCardGradient } from "@/components/ui/feature-section-with-card-gradient";
-import { LocationMap } from "@/components/ui/expand-map";
 import FooterSection from "@/components/ui/footer";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { GooeyLoader } from "@/components/ui/loader-10";
 import { SignUpPopup } from "@/components/ui/sign-up-popup";
 import AboutUsSection from "@/components/ui/about-us-section";
-import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee";
+import { PremiumTestimonials } from "@/components/ui/premium-testimonials";
 import { Logos3 } from "@/components/ui/logos3";
 import { InstagramReels } from "@/components/ui/instagram-reels";
-
-const testimonials = [
-  {
-    author: {
-      name: "Rohit Sharma",
-      handle: "@rohit_media",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
-    },
-    text: "Calistic Media transformed our brand's organic reach. Their 50k+ creator network is a game changer for the Indian market."
-  },
-  {
-    author: {
-      name: "Ananya Iyer",
-      handle: "@ananya_creates",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
-    },
-    text: "The high-fidelity content they produced for our last campaign went viral within 48 hours. pure organic magic!"
-  },
-  {
-    author: {
-      name: "Vikram Bose",
-      handle: "@vikram_entrepreneur",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop"
-    },
-    text: "Finally an agency that doesn't just push ads but builds actual brand legacy. Their R&D team really knows their numbers."
-  },
-  {
-    author: {
-      name: "Priya Das",
-      handle: "@priya_lifestyle",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop"
-    },
-    text: "Collaborating with Calistic as a creator has been seamless. They bridge the gap between brands and creators like no one else."
-  }
-]
 
 export default function LandingPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -67,7 +31,7 @@ export default function LandingPage() {
   }, []);
 
   const navItems = [
-    { name: "Home", url: "#", icon: HomeIcon },
+    { name: "Home", url: "#", icon: Home },
     { name: "Services", url: "/services", icon: Layout },
     { name: "Features", url: "/features", icon: Sparkles },
     { name: "Contact", url: "/contact", icon: MessageSquare }
@@ -101,18 +65,7 @@ export default function LandingPage() {
 
       <InstagramReels />
 
-      <TestimonialsSection
-        title="Trusted by India's biggest brands and creators"
-        description="Join the 50,000+ creators and hundreds of brands building high-fidelity organic growth with Calistic Media."
-        testimonials={testimonials}
-      />
-
-      <section className="py-24 bg-[#030303] flex justify-center px-6">
-        <div className="flex flex-col items-center gap-8">
-          <span className="text-yellow-500/40 text-[10px] uppercase tracking-[0.4em] font-medium">Global Network</span>
-          <LocationMap location="India Network" coordinates="20.5937° N, 78.9629° E" />
-        </div>
-      </section>
+      <PremiumTestimonials />
 
       <WhatsAppButton />
       <SignUpPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />

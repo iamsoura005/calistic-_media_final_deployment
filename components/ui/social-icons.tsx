@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Instagram, Facebook, Youtube, MessageCircle, Mail, Phone, Twitter } from "lucide-react"
+import { Instagram, Linkedin, MessageCircle, Phone } from "lucide-react"
 
 const socials = [
     {
@@ -11,15 +11,9 @@ const socials = [
         isExternal: true
     },
     {
-        name: "Facebook",
-        href: "#",
-        icon: <Facebook className="size-[18px]" />,
-        isExternal: true
-    },
-    {
-        name: "YouTube",
-        href: "#",
-        icon: <Youtube className="size-[18px]" />,
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/company/calistic-production/",
+        icon: <Linkedin className="size-[18px]" />,
         isExternal: true
     },
     {
@@ -27,12 +21,6 @@ const socials = [
         href: "https://wa.me/918240721057",
         icon: <MessageCircle className="size-[18px]" />,
         isExternal: true
-    },
-    {
-        name: "Email",
-        href: "mailto:calisticproduction@gmail.com",
-        icon: <Mail className="size-[18px]" />,
-        isExternal: false
     },
     {
         name: "Call",

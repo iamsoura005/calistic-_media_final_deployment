@@ -136,12 +136,14 @@ const Logos3 = ({
                                             href={logo.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex shrink-0 items-center justify-center bg-white/5 p-4 rounded-lg w-full h-32 transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] active:scale-95"
+                                            className="flex shrink-0 items-center justify-center bg-white/5 p-4 rounded-lg w-full h-32 transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] active:scale-95 transform-gpu will-change-transform"
                                         >
                                             <img
                                                 src={logo.image}
                                                 alt={logo.description}
                                                 className="h-full w-full object-contain"
+                                                loading="eager"
+                                                decoding="async"
                                             />
                                         </a>
                                         <span className="text-sm text-white/70 font-medium text-center">
