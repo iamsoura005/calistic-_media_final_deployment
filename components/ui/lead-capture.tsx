@@ -23,7 +23,7 @@ export function LeadCapture() {
 
         try {
             // Replace with your actual deployment URL
-            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxR6ohS4FPczuaFbsCOoQNq2GVulJDkXbjtjDxCj_LmJ2cIB058mp_B5e1ZwkxViPy_/exec"
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqyAg-opc-CvBjWR65FQtdbdyV1DqMNCwhDYW2OesWWD0gv2PVHQqZByM5F5Vv_Sqf/exec"
 
             await fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
