@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Quote, Star, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
 
@@ -71,14 +71,14 @@ export function PremiumTestimonials() {
         })
     };
 
-    const fadeInUp = {
+    const fadeInUp: Variants = {
         hidden: { opacity: 0, y: 60 },
         visible: {
             opacity: 1,
             y: 0,
             transition: {
                 duration: 0.8,
-                ease: [0.23, 0.86, 0.39, 0.96]
+                ease: [0.23, 0.86, 0.39, 0.96] as const
             }
         }
     };
