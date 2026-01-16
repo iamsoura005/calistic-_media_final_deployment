@@ -95,121 +95,123 @@ export default function HeroGeometric({
     };
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/[0.05] via-transparent to-amber-500/[0.05] blur-3xl" />
+        <header role="banner" aria-label="Hero Section">
+            <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/[0.05] via-transparent to-amber-500/[0.05] blur-3xl" />
 
-            <div className="absolute inset-0 overflow-hidden">
-                <ElegantShape
-                    delay={0.1}
-                    width={600}
-                    height={140}
-                    rotate={12}
-                    gradient="from-yellow-500/[0.15]"
-                    className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
-                />
+                <div className="absolute inset-0 overflow-hidden">
+                    <ElegantShape
+                        delay={0.1}
+                        width={600}
+                        height={140}
+                        rotate={12}
+                        gradient="from-yellow-500/[0.15]"
+                        className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
+                    />
 
-                <ElegantShape
-                    delay={0.3}
-                    width={500}
-                    height={120}
-                    rotate={-15}
-                    gradient="from-amber-500/[0.15]"
-                    className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%] hidden md:block"
-                />
+                    <ElegantShape
+                        delay={0.3}
+                        width={500}
+                        height={120}
+                        rotate={-15}
+                        gradient="from-amber-500/[0.15]"
+                        className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%] hidden md:block"
+                    />
 
-                <ElegantShape
-                    delay={0.2}
-                    width={300}
-                    height={80}
-                    rotate={-8}
-                    gradient="from-orange-500/[0.15]"
-                    className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
-                />
+                    <ElegantShape
+                        delay={0.2}
+                        width={300}
+                        height={80}
+                        rotate={-8}
+                        gradient="from-orange-500/[0.15]"
+                        className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+                    />
 
-                <ElegantShape
-                    delay={0.4}
-                    width={200}
-                    height={60}
-                    rotate={20}
-                    gradient="from-amber-500/[0.15]"
-                    className="right-[15%] md:right-[20%] top-[10%] md:top-[15%] hidden md:block"
-                />
+                    <ElegantShape
+                        delay={0.4}
+                        width={200}
+                        height={60}
+                        rotate={20}
+                        gradient="from-amber-500/[0.15]"
+                        className="right-[15%] md:right-[20%] top-[10%] md:top-[15%] hidden md:block"
+                    />
 
-                <ElegantShape
-                    delay={0.5}
-                    width={150}
-                    height={40}
-                    rotate={-25}
-                    gradient="from-yellow-400/[0.15]"
-                    className="left-[20%] md:left-[25%] top-[5%] md:top-[10%] hidden md:block"
-                />
-            </div>
-
-            <div className="relative z-10 container mx-auto px-4 md:px-6 py-10 md:py-0 flex items-center justify-center min-h-[calc(100vh-80px)] md:min-h-screen will-change-transform">
-                <div className="max-w-4xl mx-auto text-center">
-                    <motion.div
-                        custom={0}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] mb-10 md:mb-16 will-change-transform"
-                    >
-                        <Circle className="h-2 w-2 fill-yellow-500/80 animate-pulse" />
-                        <span className="text-xs md:text-sm text-white/60 tracking-[0.2em] uppercase font-light">
-                            {badge}
-                        </span>
-                    </motion.div>
-
-                    <motion.div
-                        custom={1}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="will-change-transform"
-                    >
-                        <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight mb-6 md:mb-12 tracking-tighter leading-[1.1] md:leading-none">
-                            <motion.span
-                                className="block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50"
-                                animate={{ opacity: [0.9, 1, 0.9] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                {title1}
-                            </motion.span>
-                            <motion.span
-                                className={cn(
-                                    "block bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-amber-300 italic font-medium py-1 md:py-2"
-                                )}
-                                animate={{
-                                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                                }}
-                                transition={{
-                                    duration: 6,
-                                    repeat: Infinity,
-                                    ease: "linear",
-                                }}
-                                style={{ backgroundSize: "200% auto" }}
-                            >
-                                {title2}
-                            </motion.span>
-                        </h1>
-                    </motion.div>
-
-                    <motion.div
-                        custom={2}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="flex flex-col items-center will-change-transform"
-                    >
-                        <p className="text-xs sm:text-lg md:text-xl text-white/40 mb-8 md:mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
-                            Driving sustainable <span className="text-yellow-500/60 font-medium">ROI</span> through pure organic ways. We thoroughly understand where to work and how to scale your brand Pan India.
-                        </p>
-                    </motion.div>
+                    <ElegantShape
+                        delay={0.5}
+                        width={150}
+                        height={40}
+                        rotate={-25}
+                        gradient="from-yellow-400/[0.15]"
+                        className="left-[20%] md:left-[25%] top-[5%] md:top-[10%] hidden md:block"
+                    />
                 </div>
-            </div>
 
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
-        </div>
+                <div className="relative z-10 container mx-auto px-4 md:px-6 py-10 md:py-0 flex items-center justify-center min-h-[calc(100vh-80px)] md:min-h-screen will-change-transform">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <motion.div
+                            custom={0}
+                            variants={fadeUpVariants}
+                            initial="hidden"
+                            animate="visible"
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] mb-10 md:mb-16 will-change-transform"
+                        >
+                            <Circle className="h-2 w-2 fill-yellow-500/80 animate-pulse" />
+                            <span className="text-xs md:text-sm text-white/60 tracking-[0.2em] uppercase font-light">
+                                {badge}
+                            </span>
+                        </motion.div>
+
+                        <motion.div
+                            custom={1}
+                            variants={fadeUpVariants}
+                            initial="hidden"
+                            animate="visible"
+                            className="will-change-transform"
+                        >
+                            <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight mb-6 md:mb-12 tracking-tighter leading-[1.1] md:leading-none">
+                                <motion.span
+                                    className="block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50"
+                                    animate={{ opacity: [0.9, 1, 0.9] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                >
+                                    {title1}
+                                </motion.span>
+                                <motion.span
+                                    className={cn(
+                                        "block bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-amber-300 italic font-medium py-1 md:py-2"
+                                    )}
+                                    animate={{
+                                        backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                                    }}
+                                    transition={{
+                                        duration: 6,
+                                        repeat: Infinity,
+                                        ease: "linear",
+                                    }}
+                                    style={{ backgroundSize: "200% auto" }}
+                                >
+                                    {title2}
+                                </motion.span>
+                            </h1>
+                        </motion.div>
+
+                        <motion.div
+                            custom={2}
+                            variants={fadeUpVariants}
+                            initial="hidden"
+                            animate="visible"
+                            className="flex flex-col items-center will-change-transform"
+                        >
+                            <p className="text-xs sm:text-lg md:text-xl text-white/40 mb-8 md:mb-10 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
+                                Driving sustainable <span className="text-yellow-500/60 font-medium">ROI</span> through pure organic ways. We thoroughly understand where to work and how to scale your brand Pan India.
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
+            </div>
+        </header>
     );
 }
 

@@ -107,7 +107,7 @@ export function NavBar({ items, className, onSignupClick }: NavBarProps) {
                     onClick={onSignupClick}
                     className="px-4 py-1.5 md:px-6 md:py-2 bg-yellow-500 hover:bg-yellow-400 text-black text-[10px] md:text-sm font-semibold rounded-full shadow-lg shadow-yellow-500/20 transition-all duration-300 hover:shadow-yellow-500/40 hover:scale-105 active:scale-95"
                 >
-                    SIGN UP
+                    GET STARTED
                 </button>
             </div>
         </div>

@@ -21,7 +21,7 @@ const links = [
 
 export default function FooterSection() {
     return (
-        <footer className="py-16 md:py-32 bg-[#030303] border-t border-white/5">
+        <footer role="contentinfo" className="py-16 md:py-32 bg-[#030303] border-t border-white/5">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="flex flex-col items-center space-y-12">
                     <Link href="/" className="relative block h-16 w-16 grayscale hover:grayscale-0 transition-all duration-500">

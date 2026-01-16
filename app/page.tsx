@@ -55,17 +55,27 @@ export default function LandingPage() {
         title2="Media"
       />
 
-      <section id="features">
+      {/* Social Proof Section - High Trust */}
+      <section id="clients" aria-label="Our Clients and Collaborations">
+        <Logos3 />
+      </section>
+
+      <section id="work" aria-label="Our Work Portfolio">
+        <InstagramReels />
+      </section>
+
+      <section id="testimonials" aria-label="Client Testimonials">
+        <PremiumTestimonials />
+      </section>
+
+      {/* Features & About */}
+      <section id="features" aria-label="Our Features and Services">
         <FeaturesSectionWithCardGradient />
       </section>
 
-      <AboutUsSection />
-
-      <Logos3 />
-
-      <InstagramReels />
-
-      <PremiumTestimonials />
+      <section id="about" aria-label="About Calistic Media">
+        <AboutUsSection />
+      </section>
 
       <WhatsAppButton />
       <SignUpPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />

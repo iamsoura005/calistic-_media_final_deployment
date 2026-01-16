@@ -115,9 +115,9 @@ const Logos3 = ({
         <section className="py-24 bg-[#030303] text-white">
             <div className="w-full h-px bg-linear-to-r from-transparent via-yellow-500/20 to-transparent" />
             <div className="container flex flex-col items-center text-center">
-                <h1 className="my-8 text-2xl font-bold text-pretty lg:text-4xl text-white">
+                <h2 className="my-8 text-2xl font-bold text-pretty lg:text-4xl text-white">
                     {heading}
-                </h1>
+                </h2>
             </div>
             <div className="pt-10 md:pt-16 lg:pt-20">
                 <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
