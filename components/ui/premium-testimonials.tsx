@@ -109,19 +109,9 @@ export function PremiumTestimonials() {
             {/* Enhanced Background Effects */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Animated gradient mesh */}
-                <motion.div
+                {/* Simplified gradient - less CPU intensive */}
+                <div
                     className="absolute inset-0 bg-gradient-to-br from-yellow-500/[0.03] via-purple-500/[0.02] to-yellow-500/[0.03]"
-                    animate={{
-                        backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
-                    }}
-                    transition={{
-                        duration: 25,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                    style={{
-                        backgroundSize: '400% 400%'
-                    }}
                 />
 
                 {/* Moving light orbs - changed to brand colors */}
@@ -167,7 +157,7 @@ export function PremiumTestimonials() {
                     variants={fadeInUp}
                 >
                     <motion.div
-                        className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.08] border border-white/[0.15] backdrop-blur-sm mb-6"
+                        className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.12] border border-white/[0.15] mb-6"
                         whileHover={{ scale: 1.05, borderColor: "rgba(250, 204, 21, 0.3)" }}
                     >
                         <motion.div
@@ -234,7 +224,7 @@ export function PremiumTestimonials() {
                                 }}
                                 className="absolute inset-0"
                             >
-                                <div className="relative h-full bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl rounded-3xl border border-white/[0.15] p-6 md:p-12 overflow-hidden group">
+                                <div className="relative h-full bg-gradient-to-br from-white/[0.10] to-white/[0.04] backdrop-blur-sm md:backdrop-blur-lg rounded-3xl border border-white/[0.15] p-6 md:p-12 overflow-hidden group transform-gpu">
                                     {/* Animated background gradient */}
                                     <motion.div
                                         className="absolute inset-0 bg-gradient-to-br from-yellow-500/[0.05] via-transparent to-purple-500/[0.05] rounded-3xl transform-gpu will-change-transform"
@@ -334,7 +324,7 @@ export function PremiumTestimonials() {
                                                 {testimonials[currentIndex].results.map((result, i) => (
                                                     <motion.div
                                                         key={i}
-                                                        className="bg-white/[0.05] rounded-lg p-3 border border-white/[0.1] backdrop-blur-sm"
+                                                        className="bg-white/[0.08] rounded-lg p-3 border border-white/[0.1]"
                                                         initial={{ opacity: 0, y: 20 }}
                                                         animate={{ opacity: 1, y: 0 }}
                                                         transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}

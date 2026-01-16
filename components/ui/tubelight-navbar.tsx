@@ -31,7 +31,8 @@ export function NavBar({ items, className, onSignupClick }: NavBarProps) {
         }
 
         handleResize()
-        window.addEventListener("resize", handleResize)
+        // Use passive listener to avoid blocking scroll
+        window.addEventListener("resize", handleResize, { passive: true })
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
@@ -60,7 +61,7 @@ export function NavBar({ items, className, onSignupClick }: NavBarProps) {
                 />
             </Link>
 
-            <div className="absolute left-1/2 -translate-x-1/2 top-4 md:top-6 flex items-center gap-0.5 md:gap-1 bg-black/60 border border-white/10 backdrop-blur-md py-1 px-1 rounded-full shadow-2xl pointer-events-auto will-change-transform">
+            <div className="absolute left-1/2 -translate-x-1/2 top-4 md:top-6 flex items-center gap-0.5 md:gap-1 bg-black/80 border border-white/10 backdrop-blur-sm md:backdrop-blur-md py-1 px-1 rounded-full shadow-2xl pointer-events-auto will-change-transform transform-gpu">
                 {items.map((item) => {
                     const Icon = item.icon
                     const isActive = activeTab === item.name

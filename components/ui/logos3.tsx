@@ -142,7 +142,7 @@ const Logos3 = ({
                                                 src={logo.image}
                                                 alt={logo.description}
                                                 className="h-full w-full object-contain"
-                                                loading="eager"
+                                                loading="lazy"
                                                 decoding="async"
                                             />
                                         </a>

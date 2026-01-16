@@ -30,10 +30,11 @@ export default function AboutUsSection({
         offset: ["start end", "end start"],
     })
 
-    const y1 = useTransform(scrollYProgress, [0, 1], [0, -30])
-    const y2 = useTransform(scrollYProgress, [0, 1], [0, 30])
-    const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 10])
-    const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -10])
+    // Reduced parallax values for better mobile performance
+    const y1 = useTransform(scrollYProgress, [0, 1], [0, -15])
+    const y2 = useTransform(scrollYProgress, [0, 1], [0, 15])
+    const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 5])
+    const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -5])
 
     useEffect(() => {
         setIsVisible(true)
@@ -105,11 +106,11 @@ export default function AboutUsSection({
         >
             {/* Decorative background elements - Hidden on small mobile to save CPU */}
             <motion.div
-                className="absolute top-20 left-10 w-64 h-64 rounded-full bg-yellow-500/5 blur-3xl hidden md:block will-change-transform"
+                className="absolute top-20 left-10 w-64 h-64 rounded-full bg-yellow-500/5 blur-2xl hidden md:block will-change-transform transform-gpu"
                 style={{ y: y1, rotate: rotate1 }}
             />
             <motion.div
-                className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-purple-500/5 blur-3xl hidden md:block will-change-transform"
+                className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-purple-500/5 blur-2xl hidden md:block will-change-transform transform-gpu"
                 style={{ y: y2, rotate: rotate2 }}
             />
 
@@ -203,9 +204,9 @@ export default function AboutUsSection({
                         variants={itemVariants}
                     >
                         <div className="relative w-64 h-64 md:w-[450px] md:h-[450px]">
-                            {/* Decorative Background Glows */}
-                            <div className="absolute inset-0 rounded-[3rem] bg-yellow-500/10 blur-[60px] animate-pulse" />
-                            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-yellow-500/20 via-transparent to-purple-500/20 blur-[10px]" />
+                            {/* Decorative Background Glows - Reduced blur for performance */}
+                            <div className="absolute inset-0 rounded-[3rem] bg-yellow-500/10 blur-xl md:blur-2xl" />
+                            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-yellow-500/20 via-transparent to-purple-500/20 blur-md" />
 
                             <motion.div
                                 className="relative w-full h-full flex items-center justify-center p-4 md:p-8"
@@ -214,8 +215,8 @@ export default function AboutUsSection({
                                 viewport={{ once: true }}
                                 transition={{ duration: 1, ease: "easeOut" }}
                             >
-                                {/* Subtle background glow instead of box */}
-                                <div className="absolute inset-0 bg-yellow-500/5 blur-[100px] rounded-full pointer-events-none" />
+                                {/* Subtle background glow instead of box - reduced blur */}
+                                <div className="absolute inset-0 bg-yellow-500/5 blur-2xl md:blur-3xl rounded-full pointer-events-none" />
                                 <img
                                     src="/logo-gold.png"
                                     alt="Calistic Media"
