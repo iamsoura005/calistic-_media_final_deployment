@@ -23,7 +23,7 @@ interface Logos3Props {
 }
 
 const Logos3 = ({
-    heading = "Collabed with",
+    heading = "Collaborated\nWith",
     logos = [
         {
             id: "logo-1",
@@ -115,7 +115,7 @@ const Logos3 = ({
         <section className="py-24 bg-[#030303] text-white">
             <div className="w-full h-px bg-linear-to-r from-transparent via-yellow-500/20 to-transparent" />
             <div className="container flex flex-col items-center text-center">
-                <h2 className="my-8 text-2xl font-bold text-pretty lg:text-4xl text-white">
+                <h2 className="my-8 text-2xl font-bold text-pretty lg:text-4xl text-white whitespace-pre-line">
                     {heading}
                 </h2>
             </div>
