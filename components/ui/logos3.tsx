@@ -1,6 +1,7 @@
 "use client";
 
 import AutoScroll from "embla-carousel-auto-scroll";
+import { useState, useEffect } from "react";
 
 import {
     Carousel,
@@ -111,6 +112,17 @@ const Logos3 = ({
         },
     ],
 }: Logos3Props) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <section className="py-24 bg-[#030303] text-white">
             <div className="w-full h-px bg-linear-to-r from-transparent via-yellow-500/20 to-transparent" />
@@ -123,7 +135,7 @@ const Logos3 = ({
                 <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
                     <Carousel
                         opts={{ loop: true }}
-                        plugins={[AutoScroll({ playOnInit: true, speed: 1.5, stopOnInteraction: false })]}
+                        plugins={[AutoScroll({ playOnInit: true, speed: isMobile ? 0.8 : 1.5, stopOnInteraction: false })]}
                     >
                         <CarouselContent className="-ml-2 md:-ml-4">
                             {logos.map((logo) => (
@@ -136,7 +148,7 @@ const Logos3 = ({
                                             href={logo.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex shrink-0 items-center justify-center bg-white/5 p-4 rounded-lg w-full h-32 transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] active:scale-95 transform-gpu will-change-transform"
+                                            className={`flex shrink-0 items-center justify-center bg-white/5 p-4 rounded-lg w-full h-32 transition-all duration-300 transform-gpu will-change-transform ${!isMobile ? "hover:scale-110 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)]" : "active:scale-95"}`}
                                         >
                                             <img
                                                 src={logo.image}

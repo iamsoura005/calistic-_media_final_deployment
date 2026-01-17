@@ -39,6 +39,17 @@ export function PremiumTestimonials() {
     const [direction, setDirection] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     useEffect(() => {
         const timer = setInterval(() => {
             setDirection(1);
@@ -50,10 +61,10 @@ export function PremiumTestimonials() {
 
     const slideVariants = {
         enter: (direction: number) => ({
-            x: direction > 0 ? 1000 : -1000,
+            x: direction > 0 ? (isMobile ? '100%' : 1000) : (isMobile ? '-100%' : -1000),
             opacity: 0,
             scale: 0.8,
-            rotateY: direction > 0 ? 45 : -45
+            rotateY: isMobile ? 0 : (direction > 0 ? 45 : -45)
         }),
         center: {
             zIndex: 1,
@@ -64,10 +75,10 @@ export function PremiumTestimonials() {
         },
         exit: (direction: number) => ({
             zIndex: 0,
-            x: direction < 0 ? 1000 : -1000,
+            x: direction < 0 ? (isMobile ? '100%' : 1000) : (isMobile ? '-100%' : -1000),
             opacity: 0,
             scale: 0.8,
-            rotateY: direction < 0 ? 45 : -45
+            rotateY: isMobile ? 0 : (direction < 0 ? 45 : -45)
         })
     };
 
@@ -114,33 +125,37 @@ export function PremiumTestimonials() {
                     className="absolute inset-0 bg-gradient-to-br from-yellow-500/[0.03] via-purple-500/[0.02] to-yellow-500/[0.03]"
                 />
 
-                {/* Moving light orbs - changed to brand colors */}
-                <motion.div
-                    className="absolute top-1/3 left-1/5 w-72 h-72 bg-yellow-400/5 rounded-full blur-3xl transform-gpu will-change-transform"
-                    animate={{
-                        x: [0, 150, 0],
-                        y: [0, 80, 0],
-                        scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
-                <motion.div
-                    className="absolute bottom-1/3 right-1/5 w-80 h-80 bg-purple-400/5 rounded-full blur-3xl transform-gpu will-change-transform"
-                    animate={{
-                        x: [0, -100, 0],
-                        y: [0, -60, 0],
-                        scale: [1, 1.3, 1],
-                    }}
-                    transition={{
-                        duration: 22,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
+                {/* Moving light orbs - reduced complexity on mobile */}
+                {!isMobile && (
+                    <>
+                        <motion.div
+                            className="absolute top-1/3 left-1/5 w-72 h-72 bg-yellow-400/5 rounded-full blur-3xl transform-gpu will-change-transform"
+                            animate={{
+                                x: [0, 150, 0],
+                                y: [0, 80, 0],
+                                scale: [1, 1.2, 1],
+                            }}
+                            transition={{
+                                duration: 20,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        />
+                        <motion.div
+                            className="absolute bottom-1/3 right-1/5 w-80 h-80 bg-purple-400/5 rounded-full blur-3xl transform-gpu will-change-transform"
+                            animate={{
+                                x: [0, -100, 0],
+                                y: [0, -60, 0],
+                                scale: [1, 1.3, 1],
+                            }}
+                            transition={{
+                                duration: 22,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        />
+                    </>
+                )}
             </div>
 
             <motion.div
