@@ -24,7 +24,7 @@ interface Logos3Props {
 }
 
 const Logos3 = ({
-    heading = "Collaborated\nWith",
+    heading = "Collaborated\nwith",
     logos = [
         {
             id: "logo-1",
