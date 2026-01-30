@@ -1,4 +1,17 @@
+# Robots.txt for https://calisticmedia.com
+# Last updated: 2026-01-31
+
+# Allow all search engines
 User-agent: *
 Allow: /
 
+# Disallow admin and private paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /signin
+
+# Sitemap location
 Sitemap: https://calisticmedia.com/sitemap.xml
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1
